@@ -152,7 +152,7 @@ export default function Footer() {
             <div className="bg-white/5 border border-gold/15 p-4">
               <p className="label-style text-gold/70 mb-2">Get a Free Quote</p>
               <p className="font-sans text-[0.8rem] text-cream/50 mb-3 leading-relaxed">
-                Ready to start your project? We'd love to hear from you.
+                Ready to start your project? We&apos;d love to hear from you.
               </p>
               <Link
                 href="/contact"

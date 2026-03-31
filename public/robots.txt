@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /api/
+
+# Host
+Host: https://hasselquistcontracting.com
+
+# Sitemaps
+Sitemap: https://hasselquistcontracting.com/sitemap.xml
