@@ -59,16 +59,36 @@ export default function ContactForm() {
 
     setServerError('')
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      })
-      if (!res.ok) {
-        const err = await res.json()
-        setServerError(err.message || 'Something went wrong. Please try again.')
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+      if (!accessKey) {
+        // Fallback: no form service configured
+        setServerError('Form submission is not yet configured. Please call or email us directly.')
         return
       }
+
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New Quote Request — ${data.service}`,
+          from_name: data.name,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          message: data.message,
+          how_heard: data.howHeard || 'Not specified',
+          botcheck: data.honeypot, // Web3Forms honeypot field
+        }),
+      })
+
+      const result = await res.json()
+      if (!result.success) {
+        setServerError(result.message || 'Something went wrong. Please try again.')
+        return
+      }
+
       setSubmitted(true)
       reset()
     } catch {

@@ -1,6 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: 'https://hasselquistcontracting.com',
+  outDir: './out',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
