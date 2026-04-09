@@ -1,7 +1,13 @@
+// Set NEXT_PUBLIC_BASE_PATH=/Hasselquist when deploying as a GitHub Pages project site.
+// Leave it empty (or unset) when a custom domain is configured — the subdirectory disappears.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   trailingSlash: false,
+  basePath,
+  assetPrefix: basePath || undefined,
   poweredByHeader: false,
   compress: true,
   images: {

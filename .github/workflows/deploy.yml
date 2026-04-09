@@ -34,6 +34,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
+          # Remove NEXT_PUBLIC_BASE_PATH once hasselquistcontracting.com is live on this repo
+          NEXT_PUBLIC_BASE_PATH: /Hasselquist
           NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
           NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
 
