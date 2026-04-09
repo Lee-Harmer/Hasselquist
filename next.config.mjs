@@ -11,8 +11,13 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   images: {
-    loader: 'custom',
-    loaderFile: './src/lib/image-loader.ts',
+    // Use the custom loader (which prepends basePath) only for the GitHub Pages build.
+    // Without a basePath there is nothing to prepend, so unoptimized is simpler and avoids
+    // webpack issues with the loaderFile in dev mode.
+    ...(basePath
+      ? { loader: 'custom', loaderFile: './src/lib/image-loader.ts' }
+      : { unoptimized: true }
+    ),
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
