@@ -29,7 +29,10 @@ export default function HomePage() {
         subheadline="From kitchens to basements, we remodel the spaces you use every day, with craftsmanship you can see and quality you can feel."
         imageSrc="/images/hero/hero-home.jpg"
         imageAlt="Beautifully remodeled kitchen interior in Shakopee, Minnesota"
-        videoSrc={['/videos/2.mp4', '/videos/1.mp4']}
+        videoSrc={[
+          `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/videos/2.mp4`,
+          `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/videos/1.mp4`,
+        ]}
         ctaPrimary={{ label: 'Get a Free Quote', href: '/contact' }}
         ctaSecondary={{ label: 'View Our Services', href: '/services' }}
       />

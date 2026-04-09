@@ -11,8 +11,8 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   images: {
-    // Image optimisation is a server feature; unoptimized is required for static export
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './src/lib/image-loader.ts',
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
