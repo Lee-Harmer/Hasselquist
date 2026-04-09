@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import HeroSimple from '@/components/sections/HeroSimple'
 import CtaBanner from '@/components/sections/CtaBanner'
 import InstagramReels from '@/components/sections/InstagramReels'

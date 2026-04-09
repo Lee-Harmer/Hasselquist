@@ -23,7 +23,6 @@ export default function Hero({
   ctaPrimary = { label: 'Get a Free Quote', href: '/contact' },
   ctaSecondary,
   imageSrc,
-  imageAlt,
   videoSrc,
   eyebrow,
 }: HeroProps) {
