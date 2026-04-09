@@ -20,31 +20,31 @@ const defaultSteps: Step[] = [
     number: '01',
     title: 'Reach Out',
     description:
-      'Call, email, or fill out the contact form. Tell us about your project — we\'ll respond within one business day.',
+      'Call, email, or fill in the contact form. Tell us what you have in mind and we\'ll be in touch within one business day.',
   },
   {
     number: '02',
     title: 'Free Consultation',
     description:
-      'We come to you for a walkthrough, listen carefully, and provide a detailed, transparent quote — no surprises.',
+      'We walk through your space, understand your vision, and give you a clear, honest quote.',
   },
   {
     number: '03',
     title: 'Skilled Execution',
     description:
-      'Our team works efficiently and cleanly. You\'re kept informed throughout, and we respect your home and schedule.',
+      'We work cleanly, efficiently, and with real respect for your home. You\'re kept informed at every stage.',
   },
   {
     number: '04',
     title: 'Final Walkthrough',
     description:
-      'We walk through the finished work together. We\'re not done until you\'re completely satisfied — that\'s the standard.',
+      'We go through everything together. We\'re not done until you\'re completely happy with the result.',
   },
 ]
 
 export default function ProcessSteps({
   eyebrow = 'How It Works',
-  title = 'A Process Built on Trust',
+  title = 'A Process That Respects Your Home & Time',
   steps = defaultSteps,
   dark = false,
 }: ProcessStepsProps) {
@@ -65,7 +65,7 @@ export default function ProcessSteps({
             <StaggerItem key={step.number}>
               <div className="relative">
                 <span className={`font-serif font-light text-[4rem] leading-none block mb-3 ${
-                  dark ? 'text-gold/20' : 'text-gold/25'
+                  dark ? 'text-gold/50' : 'text-gold/60'
                 }`}>
                   {step.number}
                 </span>

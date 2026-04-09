@@ -101,7 +101,7 @@ export default async function CityPage({ params }: PageProps) {
       <HeroSimple
         eyebrow={`${city.county} County, MN`}
         title={`Handyman & Remodeling Services in ${city.name}`}
-        subtitle={`Licensed, insured, and dedicated to quality — Hasselquist Contracting brings expert craftsmanship to homeowners in ${city.name} and throughout ${city.county} County.`}
+        subtitle={`Licensed, insured, and dedicated to quality  -  Hasselquist Contracting brings expert craftsmanship to homeowners in ${city.name} and throughout ${city.county} County.`}
         breadcrumbs={[
           { label: 'Service Areas', href: '/service-areas' },
           { label: city.name },
@@ -122,7 +122,7 @@ export default async function CityPage({ params }: PageProps) {
                 {city.description}
               </p>
               <p className="font-sans text-[1rem] text-stone-600 leading-relaxed mb-8">
-                Hasselquist Contracting is based in Shakopee, just {city.distanceMiles} miles away, and regularly serves homeowners throughout {city.name}. Whether you&apos;re planning a kitchen remodel, finishing your basement, or need reliable handyman work, we bring the same dedication to every project — on time, on budget, and built to last.
+                Hasselquist Contracting is based in Shakopee, just {city.distanceMiles} miles away, and regularly serves homeowners throughout {city.name}. Whether you&apos;re planning a kitchen remodel, finishing your basement, or need reliable handyman work, we bring the same dedication to every project  -  on time, on budget, and built to last.
               </p>
               <Link
                 href="/contact"
@@ -140,7 +140,7 @@ export default async function CityPage({ params }: PageProps) {
                   { label: 'Distance from Base', value: `~${city.distanceMiles} miles from Shakopee` },
                   { label: 'Population', value: city.population },
                   { label: 'License', value: 'MN Lic. BC808643' },
-                  { label: 'Free Estimates', value: 'Yes — always' },
+                  { label: 'Free Estimates', value: 'Yes  -  always' },
                 ].map((item) => (
                   <div key={item.label} className="flex justify-between border-b border-stone-200 pb-3">
                     <span className="font-sans text-[0.78rem] uppercase tracking-wider text-stone-400">{item.label}</span>
@@ -207,7 +207,7 @@ export default async function CityPage({ params }: PageProps) {
             {[
               {
                 q: `Does Hasselquist Contracting serve ${city.name}, MN?`,
-                a: `Yes! We proudly serve ${city.name} and surrounding areas in ${city.county} County. Based in Shakopee — just ${city.distanceMiles} miles away — we bring the same high standard to every project, wherever you are in the southwest Twin Cities.`,
+                a: `Yes! We proudly serve ${city.name} and surrounding areas in ${city.county} County. Based in Shakopee  -  just ${city.distanceMiles} miles away  -  we bring the same high standard to every project, wherever you are in the southwest Twin Cities.`,
               },
               {
                 q: `What services do you offer in ${city.name}?`,
@@ -215,11 +215,11 @@ export default async function CityPage({ params }: PageProps) {
               },
               {
                 q: `How do I get a quote for my ${city.name} home?`,
-                a: `Easy — call us at 612-257-6073, email Erik@hasselquistcontracting.com, or fill out our contact form. We offer free, no-obligation estimates with no pressure.`,
+                a: `Easy  -  call us at 612-257-6073, email Erik@hasselquistcontracting.com, or fill out our contact form. We offer free, no-obligation estimates with no pressure.`,
               },
               {
                 q: `Are you licensed and insured to work in ${city.name}?`,
-                a: `Yes. We hold Minnesota Residential Contractor License #BC808643 and are fully insured — protecting both you and our team on every project.`,
+                a: `Yes. We hold Minnesota Residential Contractor License #BC808643 and are fully insured  -  protecting both you and our team on every project.`,
               },
             ].map((faq, i) => (
               <FadeIn key={i} delay={i * 0.05}>

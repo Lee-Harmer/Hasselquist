@@ -10,6 +10,7 @@ export interface Service {
   highlights: string[]
   metaTitle: string
   metaDescription: string
+  hook?: string
 }
 
 export const services: Service[] = [
@@ -18,11 +19,11 @@ export const services: Service[] = [
     title: 'Carpentry Services',
     shortTitle: 'Carpentry',
     category: 'handyman',
-    image: '/images/services/carpentry.jpg',
+    image: '/images/services/carpentry.png',
     icon: '🪵',
     description: 'Custom trim work, built-ins, doors, and fine woodworking throughout your home.',
     longDescription:
-      'From crown molding and custom built-ins to door installations and trim repairs, our carpentry work is measured in millimeters. Every joint is tight, every surface smooth, every detail considered — because that\'s what separates a house from a home.',
+      'From crown molding and custom built-ins to door installations and trim repairs, our carpentry work is measured in millimeters. Every joint is tight, every surface smooth, every detail considered  -  because that\'s what separates a house from a home.',
     highlights: [
       'Crown molding & trim installation',
       'Custom built-in shelving & cabinetry',
@@ -40,11 +41,11 @@ export const services: Service[] = [
     title: 'Plumbing Services',
     shortTitle: 'Plumbing',
     category: 'handyman',
-    image: '/images/services/plumbing.jpg',
+    image: '/images/services/bathroom-plumbing.png',
     icon: '🔧',
     description: 'Fixture installations, leak repairs, and plumbing upgrades done right the first time.',
     longDescription:
-      'Whether you\'re upgrading a fixture or dealing with a persistent leak, we handle residential plumbing with the same precision we bring to every project. No shortcuts, no guesswork — just clean, code-compliant work that lasts.',
+      'Whether you\'re upgrading a fixture or dealing with a persistent leak, we handle residential plumbing with the same precision we bring to every project. No shortcuts, no guesswork  -  just clean, code-compliant work that lasts.',
     highlights: [
       'Faucet & fixture installation',
       'Toilet repair & replacement',
@@ -62,9 +63,9 @@ export const services: Service[] = [
     title: 'Electrical Services',
     shortTitle: 'Electrical',
     category: 'handyman',
-    image: '/images/services/electrical.jpg',
+    image: '/images/services/electrical.png',
     icon: '⚡',
-    description: 'Safe, licensed electrical work — outlets, fixtures, fans, and panel upgrades.',
+    description: 'Safe, licensed electrical work  -  outlets, fixtures, fans, and panel upgrades.',
     longDescription:
       'Electrical work demands precision and respect for safety. We handle a range of residential electrical services, always to code, always permitted where required. From a single outlet to a full pre-remodel electrical upgrade.',
     highlights: [
@@ -84,11 +85,11 @@ export const services: Service[] = [
     title: 'Drywall Services',
     shortTitle: 'Drywall',
     category: 'handyman',
-    image: '/images/services/drywall.jpg',
+    image: '/images/services/drywall.png',
     icon: '🪣',
     description: 'Seamless drywall installation, patching, and finishing with a paint-ready surface.',
     longDescription:
-      'Good drywall work is invisible — and that\'s exactly the point. Whether we\'re patching a small hole or hanging an entire room, our finishing is smooth, crisp, and indistinguishable from the surrounding wall.',
+      'Good drywall work is invisible  -  and that\'s exactly the point. Whether we\'re patching a small hole or hanging an entire room, our finishing is smooth, crisp, and indistinguishable from the surrounding wall.',
     highlights: [
       'Hole & crack patching',
       'Full room drywall installation',
@@ -106,9 +107,9 @@ export const services: Service[] = [
     title: 'Flooring Services',
     shortTitle: 'Flooring',
     category: 'handyman',
-    image: '/images/services/flooring.jpg',
+    image: '/images/services/flooring.png',
     icon: '🏠',
-    description: 'Hardwood, LVP, tile, and laminate installation — level, tight, and built to last.',
+    description: 'Hardwood, LVP, tile, and laminate installation  -  level, tight, and built to last.',
     longDescription:
       'Flooring sets the tone for every room. We install hardwood, luxury vinyl plank, tile, and laminate with the attention to layout and detail that makes the difference between good and exceptional.',
     highlights: [
@@ -128,7 +129,7 @@ export const services: Service[] = [
     title: 'Deck & Fence Services',
     shortTitle: 'Decks & Fences',
     category: 'handyman',
-    image: '/images/services/decks-fences.jpg',
+    image: '/images/services/decks-fences.png',
     icon: '🌿',
     description: 'Deck construction, repairs, and fence installation that stand up to Minnesota winters.',
     longDescription:
@@ -150,11 +151,11 @@ export const services: Service[] = [
     title: 'Kitchen Remodeling',
     shortTitle: 'Kitchen',
     category: 'remodeling',
-    image: '/images/services/kitchen-remodel.jpg',
+    image: '/images/services/kitchen-remodel.png',
     icon: '🍳',
-    description: 'Full kitchen transformations — from layout changes to custom cabinetry and finish work.',
+    description: 'Full kitchen transformations  -  from layout changes to custom cabinetry and finish work.',
     longDescription:
-      'The kitchen is the heart of the home, and a well-executed remodel changes how you experience it every single day. We manage kitchen projects from concept through completion — demolition, rough-in work, cabinetry, countertops, tile, and all finish details.',
+      'The kitchen is the heart of the home, and a well-executed remodel changes how you experience it every single day. We manage kitchen projects from concept through completion  -  demolition, rough-in work, cabinetry, countertops, tile, and all finish details.',
     highlights: [
       'Full kitchen demolition & layout changes',
       'Cabinet installation & custom cabinetry',
@@ -166,17 +167,18 @@ export const services: Service[] = [
     metaTitle: 'Kitchen Remodeling Shakopee MN | Twin Cities Kitchen Renovation',
     metaDescription:
       'Full-service kitchen remodeling in Shakopee, MN. Custom cabinetry, countertops, tile backsplash, and complete kitchen renovations serving the Twin Cities.',
+    hook: 'Where everything comes together',
   },
   {
     slug: 'bathroom',
     title: 'Bathroom Remodeling',
     shortTitle: 'Bathroom',
     category: 'remodeling',
-    image: '/images/services/bathroom-remodel.jpg',
+    image: '/images/services/bathroom-remodel.png',
     icon: '🛁',
-    description: 'Bathroom renovations from powder rooms to master suites — every tile, fixture, and finish.',
+    description: 'Bathroom renovations from powder rooms to master suites  -  every tile, fixture, and finish.',
     longDescription:
-      'A beautifully renovated bathroom is one of the highest-return investments in your home — and one of the most rewarding spaces to live with. We handle everything from tile layout to plumbing rough-in, ensuring every detail is executed with care.',
+      'A beautifully renovated bathroom is one of the highest-return investments in your home  -  and one of the most rewarding spaces to live with. We handle everything from tile layout to plumbing rough-in, ensuring every detail is executed with care.',
     highlights: [
       'Shower & tub installation and surround tile',
       'Vanity & fixture installation',
@@ -188,17 +190,18 @@ export const services: Service[] = [
     metaTitle: 'Bathroom Remodeling Shakopee MN | Renovation & Renovation',
     metaDescription:
       'Expert bathroom remodeling in Shakopee, MN. Shower tile, vanities, floor tile, and complete bathroom renovations. Serving Eden Prairie, Prior Lake, and the Twin Cities.',
+    hook: 'Your space to unwind',
   },
   {
     slug: 'basement',
     title: 'Basement Finishing',
     shortTitle: 'Basement',
     category: 'remodeling',
-    image: '/images/services/basement-remodel.jpg',
+    image: '/images/services/basement-remodel.png',
     icon: '🏗️',
     description: 'Transform your unfinished basement into a living space your family will love.',
     longDescription:
-      'An unfinished basement is a home\'s greatest untapped potential. We turn raw concrete and exposed joists into finished family rooms, home offices, gyms, guest suites, and bars — fully framed, insulated, wired, and finished to match your vision.',
+      'An unfinished basement is a home\'s greatest untapped potential. We turn raw concrete and exposed joists into finished family rooms, home offices, gyms, guest suites, and bars  -  fully framed, insulated, wired, and finished to match your vision.',
     highlights: [
       'Full basement framing & insulation',
       'Drywall installation & finishing',
@@ -210,6 +213,7 @@ export const services: Service[] = [
     metaTitle: 'Basement Finishing Shakopee MN | Basement Remodeling Twin Cities',
     metaDescription:
       'Professional basement finishing and remodeling in Shakopee, MN. Full basement renovations, home theater, bars, and guest suites. Serving the Twin Cities metro area.',
+    hook: 'Made for living, not just storage',
   },
 ]
 

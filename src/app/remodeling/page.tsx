@@ -30,7 +30,7 @@ export default function RemodelingPage() {
             <div className="max-w-2xl mb-14">
               <SectionLabel className="mb-4">Full-Service Remodeling</SectionLabel>
               <p className="font-sans text-[1rem] text-stone-600 leading-relaxed">
-                Whether you&apos;re dreaming of a chef&apos;s kitchen, a spa-like master bathroom, or a finished basement that your family will love — we bring the expertise, project management, and craftsmanship to make it happen.
+                Whether you&apos;re dreaming of a chef&apos;s kitchen, a spa-like master bathroom, or a finished basement that your family will love  -  we bring the expertise, project management, and craftsmanship to make it happen.
               </p>
             </div>
           </FadeIn>

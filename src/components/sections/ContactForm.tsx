@@ -111,56 +111,68 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
-            Full Name *
+            Full Name <span aria-hidden="true">*</span><span className="sr-only">(required)</span>
           </label>
           <input
             id="name"
             type="text"
             autoComplete="name"
+            aria-required="true"
+            aria-invalid={errors.name ? 'true' : undefined}
+            aria-describedby={errors.name ? 'name-error' : undefined}
             {...register('name')}
             className={`w-full bg-white border px-4 py-3 font-sans text-[0.9rem] text-stone-900 placeholder-stone-300 focus:outline-none focus:border-gold transition-colors duration-150 ${errors.name ? 'border-red-400' : 'border-stone-200'}`}
             placeholder="Jane Smith"
           />
-          {errors.name && <p className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.name.message}</p>}
+          {errors.name && <p id="name-error" role="alert" className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.name.message}</p>}
         </div>
 
         <div>
           <label htmlFor="phone" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
-            Phone Number *
+            Phone Number <span aria-hidden="true">*</span><span className="sr-only">(required)</span>
           </label>
           <input
             id="phone"
             type="tel"
             autoComplete="tel"
+            aria-required="true"
+            aria-invalid={errors.phone ? 'true' : undefined}
+            aria-describedby={errors.phone ? 'phone-error' : undefined}
             {...register('phone')}
             className={`w-full bg-white border px-4 py-3 font-sans text-[0.9rem] text-stone-900 placeholder-stone-300 focus:outline-none focus:border-gold transition-colors duration-150 ${errors.phone ? 'border-red-400' : 'border-stone-200'}`}
             placeholder="612-555-0123"
           />
-          {errors.phone && <p className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.phone.message}</p>}
+          {errors.phone && <p id="phone-error" role="alert" className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.phone.message}</p>}
         </div>
       </div>
 
       <div>
         <label htmlFor="email" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
-          Email Address *
+          Email Address <span aria-hidden="true">*</span><span className="sr-only">(required)</span>
         </label>
         <input
           id="email"
           type="email"
           autoComplete="email"
+          aria-required="true"
+          aria-invalid={errors.email ? 'true' : undefined}
+          aria-describedby={errors.email ? 'email-error' : undefined}
           {...register('email')}
           className={`w-full bg-white border px-4 py-3 font-sans text-[0.9rem] text-stone-900 placeholder-stone-300 focus:outline-none focus:border-gold transition-colors duration-150 ${errors.email ? 'border-red-400' : 'border-stone-200'}`}
           placeholder="jane@example.com"
         />
-        {errors.email && <p className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.email.message}</p>}
+        {errors.email && <p id="email-error" role="alert" className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.email.message}</p>}
       </div>
 
       <div>
         <label htmlFor="service" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
-          Service Needed *
+          Service Needed <span aria-hidden="true">*</span><span className="sr-only">(required)</span>
         </label>
         <select
           id="service"
+          aria-required="true"
+          aria-invalid={errors.service ? 'true' : undefined}
+          aria-describedby={errors.service ? 'service-error' : undefined}
           {...register('service')}
           className={`w-full bg-white border px-4 py-3 font-sans text-[0.9rem] text-stone-900 focus:outline-none focus:border-gold transition-colors duration-150 appearance-none ${errors.service ? 'border-red-400' : 'border-stone-200'}`}
         >
@@ -169,21 +181,24 @@ export default function ContactForm() {
             <option key={s} value={s}>{s}</option>
           ))}
         </select>
-        {errors.service && <p className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.service.message}</p>}
+        {errors.service && <p id="service-error" role="alert" className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.service.message}</p>}
       </div>
 
       <div>
         <label htmlFor="message" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
-          Tell Us About Your Project *
+          Tell Us About Your Project <span aria-hidden="true">*</span><span className="sr-only">(required)</span>
         </label>
         <textarea
           id="message"
           rows={5}
+          aria-required="true"
+          aria-invalid={errors.message ? 'true' : undefined}
+          aria-describedby={errors.message ? 'message-error' : undefined}
           {...register('message')}
           className={`w-full bg-white border px-4 py-3 font-sans text-[0.9rem] text-stone-900 placeholder-stone-300 focus:outline-none focus:border-gold transition-colors duration-150 resize-none ${errors.message ? 'border-red-400' : 'border-stone-200'}`}
           placeholder="Describe your project, timeline, and any questions you have..."
         />
-        {errors.message && <p className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.message.message}</p>}
+        {errors.message && <p id="message-error" role="alert" className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.message.message}</p>}
       </div>
 
       <div>

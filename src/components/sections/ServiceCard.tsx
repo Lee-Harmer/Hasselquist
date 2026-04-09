@@ -15,36 +15,37 @@ export default function ServiceCard({ service, baseHref }: ServiceCardProps) {
     : `/services/${service.slug}`
 
   return (
-    <Link
-      href={href}
-      className="group block bg-stone-50 hover:bg-cream transition-colors duration-300 overflow-hidden"
-    >
+    <Link href={href} className="group block overflow-hidden" aria-label={`${service.shortTitle} — learn more`}>
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[3/2] overflow-hidden bg-cream-dark" aria-hidden="true">
         <Image
           src={service.image}
-          alt={service.title}
+          alt=""
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+          className="object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+          style={{ transform: 'scale(1)', transitionProperty: 'transform' }}
         />
-        <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-charcoal/10 transition-colors duration-300" />
+        {/* Gradient reveal on hover */}
+        <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/25 transition-colors duration-500" />
+        {/* Gold bottom border reveal */}
+        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <p className="label-style text-gold mb-2">
-          {service.category === 'remodeling' ? 'Remodeling' : 'Handyman'}
-        </p>
-        <h3 className="font-serif font-medium text-h4 text-stone-900 mb-2 group-hover:text-charcoal transition-colors duration-200">
+      <div className="pt-5 pb-2">
+        <h3 className="font-serif font-light text-[1.35rem] text-stone-900 mb-2 group-hover:text-charcoal transition-colors duration-300">
           {service.shortTitle}
         </h3>
-        <p className="font-sans text-[0.85rem] text-stone-600 leading-relaxed line-clamp-2">
+        <p className="font-sans text-[0.83rem] text-stone-500 leading-relaxed line-clamp-2 mb-3">
           {service.description}
         </p>
-        <div className="flex items-center gap-1.5 mt-4 text-gold text-[0.78rem] font-sans font-medium uppercase tracking-wider">
-          Learn more
-          <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+        {service.hook && (
+          <p className="font-serif italic text-[0.95rem] text-gold/80 mb-3">{service.hook}</p>
+        )}
+        <div className="flex items-center gap-2 text-gold text-[0.7rem] font-sans uppercase tracking-[0.12em]" aria-hidden="true">
+          <span>Explore</span>
+          <svg className="w-3 h-3 group-hover:translate-x-1.5 transition-transform duration-300" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </div>

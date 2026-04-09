@@ -10,7 +10,7 @@ import { cities } from '@/lib/cities'
 export const metadata: Metadata = {
   title: 'Service Areas | Handyman & Remodeling Twin Cities MN',
   description:
-    'Hasselquist Contracting serves Shakopee, Eden Prairie, Burnsville, Apple Valley, Prior Lake, and all of the southwest Twin Cities metro. Get a free quote today.',
+    'Hasselquist Contracting serves the Twin Cities metro and surrounding areas. Based in Shakopee, MN — we work throughout Scott, Carver, Dakota, and Hennepin counties and beyond.',
   alternates: { canonical: '/service-areas' },
 }
 
@@ -19,8 +19,8 @@ export default function ServiceAreasPage() {
     <>
       <HeroSimple
         eyebrow="Where We Work"
-        title="Serving the Southwest Twin Cities"
-        subtitle="Based in Shakopee, we travel throughout the southwest metro — serving homes within a 45-minute radius with the same care and quality, every time."
+        title="Serving the Twin Cities Metro"
+        subtitle="Based in Shakopee, we work throughout the Twin Cities and surrounding areas. The cities below are our primary service area — but if you don't see yours, just reach out."
         breadcrumbs={[{ label: 'Service Areas' }]}
       />
 
@@ -30,7 +30,7 @@ export default function ServiceAreasPage() {
             <div className="max-w-2xl mb-14">
               <SectionLabel className="mb-4">Our Coverage Area</SectionLabel>
               <p className="font-sans text-[1rem] text-stone-600 leading-relaxed">
-                From Shakopee to Eden Prairie, Prior Lake to Bloomington, we serve homeowners across Scott, Carver, Dakota, and Hennepin counties. If you&apos;re within the southwest metro, we&apos;d love to work with you.
+                We regularly work across Scott, Carver, Dakota, and Hennepin counties — from Shakopee and Eden Prairie to Bloomington and beyond. The cities below represent our primary coverage area, but they&apos;re not a hard boundary. If your project sounds like a good fit, we&apos;d love to hear about it regardless of where you are.
               </p>
             </div>
           </FadeIn>
@@ -65,12 +65,12 @@ export default function ServiceAreasPage() {
           </StaggerChildren>
 
           <FadeIn className="mt-14 bg-charcoal p-8 md:p-12 text-center">
-            <SectionLabel className="mb-4 text-gold/60">Don&apos;t See Your City?</SectionLabel>
+            <SectionLabel className="mb-4 text-gold/60">Not on the List?</SectionLabel>
             <h3 className="font-serif font-light text-h2 text-cream mb-4">
-              We May Still Be Able to Help
+              We&apos;re More Flexible Than a List
             </h3>
             <p className="font-sans text-[0.9rem] text-cream/60 mb-6 max-w-lg mx-auto">
-              If you&apos;re within 45 minutes of Shakopee and don&apos;t see your city listed, give us a call. We&apos;re always happy to discuss your project.
+              These cities reflect where we work most often — not the limits of where we&apos;ll go. If you have a project worth doing, reach out and we&apos;ll have an honest conversation about it.
             </p>
             <a
               href="tel:+16122576073"

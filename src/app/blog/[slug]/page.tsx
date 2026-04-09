@@ -145,7 +145,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       {/* Mid-article CTA */}
       <CtaBanner
         title="Ready to Start Your Project?"
-        subtitle="Get a free, no-obligation quote from Hasselquist Contracting — serving Shakopee and the Twin Cities."
+        subtitle="Get a free, no-obligation quote from Hasselquist Contracting  -  serving Shakopee and the Twin Cities."
       />
 
       {/* Related Posts */}

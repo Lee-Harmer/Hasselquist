@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface BreadcrumbItem {
   label: string
@@ -14,6 +15,7 @@ interface HeroSimpleProps {
   subtitle?: string
   breadcrumbs?: BreadcrumbItem[]
   dark?: boolean
+  imageSrc?: string
 }
 
 export default function HeroSimple({
@@ -22,14 +24,28 @@ export default function HeroSimple({
   subtitle,
   breadcrumbs,
   dark = false,
+  imageSrc,
 }: HeroSimpleProps) {
   return (
     <section
-      className={`pt-36 pb-16 md:pt-44 md:pb-20 ${
-        dark ? 'bg-charcoal' : 'bg-cream'
+      className={`relative pt-36 pb-16 md:pt-44 md:pb-20 ${
+        imageSrc ? '' : dark ? 'bg-charcoal' : 'bg-cream'
       }`}
     >
-      <div className="container-editorial">
+      {imageSrc && (
+        <>
+          <Image
+            src={imageSrc}
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-charcoal/55" />
+        </>
+      )}
+      <div className="relative container-editorial">
         {/* Breadcrumbs */}
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav aria-label="Breadcrumb" className="mb-6">
@@ -37,23 +53,26 @@ export default function HeroSimple({
               <li>
                 <Link
                   href="/"
-                  className={`${dark ? 'text-cream/40 hover:text-gold' : 'text-stone-400 hover:text-gold'} transition-colors duration-150`}
+                  className={`${dark || imageSrc ? 'text-cream/40 hover:text-gold' : 'text-stone-400 hover:text-gold'} transition-colors duration-150`}
                 >
                   Home
                 </Link>
               </li>
               {breadcrumbs.map((crumb, i) => (
                 <li key={i} className="flex items-center gap-2">
-                  <span className={dark ? 'text-cream/20' : 'text-stone-300'}>·</span>
+                  <span className={dark || imageSrc ? 'text-cream/20' : 'text-stone-300'}>·</span>
                   {crumb.href && i < breadcrumbs.length - 1 ? (
                     <Link
                       href={crumb.href}
-                      className={`${dark ? 'text-cream/40 hover:text-gold' : 'text-stone-400 hover:text-gold'} transition-colors duration-150`}
+                      className={`${dark || imageSrc ? 'text-cream/40 hover:text-gold' : 'text-stone-400 hover:text-gold'} transition-colors duration-150`}
                     >
                       {crumb.label}
                     </Link>
                   ) : (
-                    <span className={dark ? 'text-cream/60' : 'text-stone-600'}>
+                    <span
+                      aria-current="page"
+                      className={dark || imageSrc ? 'text-cream/60' : 'text-stone-600'}
+                    >
                       {crumb.label}
                     </span>
                   )}
@@ -80,7 +99,7 @@ export default function HeroSimple({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             className={`font-serif font-light text-h1 md:text-display leading-[1.05] mb-5 text-balance ${
-              dark ? 'text-cream' : 'text-stone-900'
+              dark || imageSrc ? 'text-cream' : 'text-stone-900'
             }`}
           >
             {title}
@@ -92,7 +111,7 @@ export default function HeroSimple({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className={`font-sans text-lg font-light leading-relaxed ${
-                dark ? 'text-cream/65' : 'text-stone-600'
+                dark || imageSrc ? 'text-cream/65' : 'text-stone-600'
               }`}
             >
               {subtitle}
@@ -100,7 +119,7 @@ export default function HeroSimple({
           )}
         </div>
 
-        <div className={`mt-10 h-px ${dark ? 'bg-gold/20' : 'bg-stone-200'}`} />
+        <div className={`mt-10 h-px ${dark || imageSrc ? 'bg-gold/20' : 'bg-stone-200'}`} />
       </div>
     </section>
   )

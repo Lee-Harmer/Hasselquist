@@ -1,9 +1,16 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { cormorant, inter } from '@/styles/fonts'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import PageTransition from '@/components/motion/PageTransition'
 import { GoogleAnalytics } from '@next/third-parties/google'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#1C2027',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hasselquistcontracting.com'),
@@ -26,10 +33,17 @@ export const metadata: Metadata = {
     siteName: 'Hasselquist Contracting',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/og-default.jpg', width: 1200, height: 630 }],
+    url: 'https://hasselquistcontracting.com',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Hasselquist Contracting — Home Remodeling & Handyman Services Shakopee MN' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hasselquist Contracting | Home Remodeling & Handyman Services Shakopee MN',
+    description: 'Licensed home remodeling and handyman services in Shakopee, MN. Kitchen remodeling, bathroom renovation, basement finishing, and more.',
+    images: ['/og-default.jpg'],
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: '/' },
+  alternates: { canonical: 'https://hasselquistcontracting.com' },
 }
 
 const localBusinessSchema = {
@@ -59,6 +73,7 @@ const localBusinessSchema = {
     'Burnsville', 'Apple Valley', 'Eagan', 'Lakeville', 'Bloomington', 'Edina',
     'Minnetonka', 'Hopkins', 'St. Louis Park', 'Richfield', 'Minneapolis',
     'Jordan', 'Waconia', 'Victoria', 'Carver', 'Farmington', 'Rosemount', 'New Prague',
+    'Plymouth', 'Wayzata', 'Excelsior', 'Mendota Heights', 'Maple Grove',
   ].map((name) => ({ '@type': 'City', name })),
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
@@ -87,8 +102,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="font-sans antialiased bg-stone-50 text-stone-800">
+        <a
+          href="#main-content"
+          className="skip-nav"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
       </body>
       {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (

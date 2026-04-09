@@ -117,7 +117,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <CtaBanner title="Ready to Start Your Project?" subtitle="Our journal gives you the knowledge — we give you the craftsmanship." />
+      <CtaBanner title="Ready to Start Your Project?" subtitle="Our journal gives you the knowledge  -  we give you the craftsmanship." />
     </>
   )
 }

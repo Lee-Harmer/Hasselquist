@@ -62,7 +62,7 @@ export const cities: City[] = [
     distanceMiles: 15,
     population: '63,000',
     description:
-      'One of the Twin Cities\' most established southern suburbs, Burnsville offers a mix of 1970s-era ranch homes and newer townhomes — many of which are prime candidates for kitchen and bathroom updates that bring them into the modern era.',
+      'One of the Twin Cities\' most established southern suburbs, Burnsville offers a mix of 1970s-era ranch homes and newer townhomes  -  many of which are prime candidates for kitchen and bathroom updates that bring them into the modern era.',
   },
   {
     name: 'Apple Valley',
@@ -107,7 +107,7 @@ export const cities: City[] = [
     distanceMiles: 22,
     population: '53,000',
     description:
-      'Edina is synonymous with upscale suburban living in the Twin Cities. Discerning homeowners here expect exceptional craftsmanship — whether updating a 1950s colonial or renovating a newer luxury home.',
+      'Edina is synonymous with upscale suburban living in the Twin Cities. Discerning homeowners here expect exceptional craftsmanship  -  whether updating a 1950s colonial or renovating a newer luxury home.',
   },
   {
     name: 'Minnetonka',
@@ -116,7 +116,7 @@ export const cities: City[] = [
     distanceMiles: 22,
     population: '53,000',
     description:
-      'Minnetonka\'s wooded lots and mix of architectural styles — from mid-century modern to traditional colonial — create a constant demand for skilled craftsmen who can work sensitively within the existing character of each home.',
+      'Minnetonka\'s wooded lots and mix of architectural styles  -  from mid-century modern to traditional colonial  -  create a constant demand for skilled craftsmen who can work sensitively within the existing character of each home.',
   },
   {
     name: 'Hopkins',
@@ -152,7 +152,7 @@ export const cities: City[] = [
     distanceMiles: 15,
     population: '7,000',
     description:
-      'Just south of Shakopee, Jordan is a small city with a tight-knit community and a growing number of new subdivisions attracting young families investing in their first homes — and their first remodels.',
+      'Just south of Shakopee, Jordan is a small city with a tight-knit community and a growing number of new subdivisions attracting young families investing in their first homes  -  and their first remodels.',
   },
   {
     name: 'Waconia',
@@ -170,7 +170,7 @@ export const cities: City[] = [
     distanceMiles: 16,
     population: '10,000',
     description:
-      'Victoria is a charming small city surrounded by lakes and natural areas. Its upscale residential neighborhoods feature homes where quality craftsmanship is not just appreciated — it\'s expected.',
+      'Victoria is a charming small city surrounded by lakes and natural areas. Its upscale residential neighborhoods feature homes where quality craftsmanship is not just appreciated  -  it\'s expected.',
   },
   {
     name: 'Carver',
@@ -206,7 +206,7 @@ export const cities: City[] = [
     distanceMiles: 22,
     population: '8,000',
     description:
-      'New Prague retains a strong small-town identity while welcoming new residential development. Homeowners here value reliable, skilled local contractors — exactly the standard Hasselquist Contracting brings to every project.',
+      'New Prague retains a strong small-town identity while welcoming new residential development. Homeowners here value reliable, skilled local contractors  -  exactly the standard Hasselquist Contracting brings to every project.',
   },
   {
     name: 'Minneapolis',
@@ -217,6 +217,52 @@ export const cities: City[] = [
     description:
       'South Minneapolis neighborhoods like Tangletown, Kenny, and Fulton are filled with character-rich craftsman bungalows and colonial revivals. These homes have tremendous bones and even greater potential when renovated with care.',
     neighborhoods: ['Tangletown', 'Kenny', 'Fulton', 'Nokomis', 'Longfellow'],
+  },
+  {
+    name: 'Plymouth',
+    slug: 'plymouth',
+    county: 'Hennepin',
+    distanceMiles: 28,
+    population: '82,000',
+    description:
+      'Plymouth is one of the largest and most desirable suburbs in the Twin Cities, with a strong mix of executive homes, lakeside properties, and established family neighborhoods. Homeowners here consistently invest in high-quality remodeling and home improvements.',
+    neighborhoods: ['Bass Lake', 'Parkers Lake', 'Medicine Lake'],
+  },
+  {
+    name: 'Wayzata',
+    slug: 'wayzata',
+    county: 'Hennepin',
+    distanceMiles: 28,
+    population: '4,000',
+    description:
+      'Wayzata sits on the shores of Lake Minnetonka and is home to some of the most prestigious real estate in Minnesota. Homeowners here expect exceptional craftsmanship and an elevated approach to every project — exactly what Hasselquist Contracting delivers.',
+  },
+  {
+    name: 'Excelsior',
+    slug: 'excelsior',
+    county: 'Hennepin',
+    distanceMiles: 20,
+    population: '2,500',
+    description:
+      'Excelsior is a charming lakeside village on Lake Minnetonka with beautifully maintained historic homes and upscale newer builds. The community values quality craftsmanship and attention to detail in every home improvement project.',
+  },
+  {
+    name: 'Mendota Heights',
+    slug: 'mendota-heights',
+    county: 'Dakota',
+    distanceMiles: 28,
+    population: '11,000',
+    description:
+      'Mendota Heights is one of the most established and affluent communities in Dakota County, known for its mature tree-lined streets, well-maintained homes, and discerning homeowners who demand quality in every renovation.',
+  },
+  {
+    name: 'Maple Grove',
+    slug: 'maple-grove',
+    county: 'Hennepin',
+    distanceMiles: 38,
+    population: '73,000',
+    description:
+      'Maple Grove is one of the fastest-growing and most sought-after suburbs in the Twin Cities, with a large stock of newer homes where homeowners are investing in custom upgrades, finished basements, and full remodels to personalize their spaces.',
   },
 ]
 

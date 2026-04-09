@@ -16,11 +16,33 @@
   --color-stone-900: #1A1714;
 }
 
+/* Skip navigation link — visible on focus, hidden otherwise */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: #1C2027;
+  color: #C9A84C;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-nav:focus {
+  top: 0;
+  outline: 2px solid #C9A84C;
+  outline-offset: 2px;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
@@ -36,26 +58,39 @@
     line-height: 1.1;
   }
 
-  /* Remove default focus ring, add branded one */
+  /* All links and buttons transition smoothly */
+  a, button {
+    transition-property: color, background-color, border-color, opacity, transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Branded focus ring */
   *:focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 1.5px solid var(--color-gold);
     outline-offset: 3px;
   }
 
-  /* Smooth image rendering */
-  img {
-    image-rendering: -webkit-optimize-contrast;
+  /* Selection */
+  ::selection {
+    background-color: #C9A84C28;
+    color: var(--color-stone-900);
   }
 
-  /* Selection colour */
-  ::selection {
-    background-color: #C9A84C33;
-    color: var(--color-stone-900);
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
 @layer components {
-  /* Section spacing utility */
+  /* Section spacing */
   .section-padding {
     @apply py-20 md:py-28 lg:py-36;
   }
@@ -64,24 +99,33 @@
     @apply py-12 md:py-16 lg:py-20;
   }
 
-  /* Container override — slightly narrower than Tailwind default for editorial feel */
+  /* Editorial container */
   .container-editorial {
     @apply max-w-7xl mx-auto px-6 md:px-10 lg:px-16;
   }
 
-  /* Gold ornamental divider */
+  /* Gold divider */
   .divider-gold {
     @apply border-0 h-px bg-gold/30 my-0;
   }
 
-  /* Section label style */
+  /* Section label */
   .label-style {
-    @apply text-label font-sans font-medium uppercase tracking-[0.15em] text-gold;
+    @apply text-label font-sans font-medium uppercase tracking-[0.18em] text-gold;
   }
 
-  /* Smooth hover transitions */
+  /* Hover lift */
   .hover-lift {
-    @apply transition-transform duration-300 ease-out hover:-translate-y-1;
+    @apply transition-transform duration-500 ease-out hover:-translate-y-1;
+  }
+
+  /* Luxury button base */
+  .btn-primary {
+    @apply inline-flex items-center gap-3 bg-gold hover:bg-gold-dark text-charcoal font-sans font-medium text-[0.75rem] uppercase tracking-[0.12em] px-9 py-4 transition-all duration-300;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-stone-700 hover:text-gold font-sans text-[0.75rem] uppercase tracking-[0.12em] border-b border-stone-300 hover:border-gold pb-0.5 transition-all duration-300;
   }
 }
 
@@ -90,12 +134,20 @@
     text-wrap: balance;
   }
 
-  /* Hide scrollbar but keep scrollability */
+  /* Hide scrollbar */
   .scrollbar-none {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
   .scrollbar-none::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Subtle image zoom on hover - use with overflow-hidden parent */
+  .img-zoom {
+    @apply transition-transform duration-700 ease-out;
+  }
+  .group:hover .img-zoom {
+    transform: scale(1.06);
   }
 }

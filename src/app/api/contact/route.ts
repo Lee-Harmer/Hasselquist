@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
       await resend.emails.send({
         from: 'Hasselquist Website <noreply@hasselquistcontracting.com>',
         to: 'Erik@hasselquistcontracting.com',
-        subject: `New Quote Request — ${service}`,
+        subject: `New Quote Request  -  ${service}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #1C2027; border-bottom: 2px solid #C9A84C; padding-bottom: 8px;">New Quote Request</h2>
@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
       await resend.emails.send({
         from: 'Erik at Hasselquist Contracting <noreply@hasselquistcontracting.com>',
         to: email,
-        subject: 'We received your message — Hasselquist Contracting',
+        subject: 'We received your message  -  Hasselquist Contracting',
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #1C2027; border-bottom: 2px solid #C9A84C; padding-bottom: 8px;">Thank You, ${name}</h2>
@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
               <li><a href="tel:+16122576073">612-257-6073</a></li>
               <li><a href="mailto:Erik@hasselquistcontracting.com">Erik@hasselquistcontracting.com</a></li>
             </ul>
-            <p style="color: #6E665C; font-size: 13px;">— Erik Hasselquist<br>Hasselquist Contracting · Shakopee, MN · Lic. BC808643</p>
+            <p style="color: #6E665C; font-size: 13px;"> -  Erik Hasselquist<br>Hasselquist Contracting · Shakopee, MN · Lic. BC808643</p>
           </div>
         `,
       })

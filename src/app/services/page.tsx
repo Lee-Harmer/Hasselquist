@@ -20,7 +20,7 @@ export default function ServicesPage() {
       <HeroSimple
         eyebrow="What We Do"
         title="Handyman Services"
-        subtitle="Skilled, reliable, and detail-oriented — we handle the full range of home repairs and improvements that keep your home at its best."
+        subtitle="Skilled, reliable, and detail-oriented  -  we handle the full range of home repairs and improvements that keep your home at its best."
         breadcrumbs={[{ label: 'Services' }]}
       />
 
@@ -30,7 +30,7 @@ export default function ServicesPage() {
             <div className="max-w-2xl mb-14">
               <SectionLabel className="mb-4">Our Services</SectionLabel>
               <p className="font-sans text-[1rem] text-stone-600 leading-relaxed">
-                From carpentry and plumbing to flooring and electrical, we bring professional-grade skill to every project — no matter the size. Every job is handled with the same care and attention to detail.
+                From carpentry and plumbing to flooring and electrical, we bring professional-grade skill to every project  -  no matter the size. Every job is handled with the same care and attention to detail.
               </p>
             </div>
           </FadeIn>
@@ -45,7 +45,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <CtaBanner title="Have a Project in Mind?" subtitle="Tell us what you need — we'll provide a free, transparent quote with no pressure." />
+      <CtaBanner title="Have a Project in Mind?" subtitle="Tell us what you need  -  we'll provide a free, transparent quote with no pressure." />
     </>
   )
 }
