@@ -3,7 +3,15 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="relative text-cream bg-charcoal" style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/images/footer-bg.png)`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <footer className="relative text-cream bg-charcoal">
+      <Image
+        src="/images/footer-bg.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+        aria-hidden="true"
+      />
       {/* Overlay */}
       <div className="absolute inset-0 bg-charcoal/70" />
       <div className="relative container-editorial pt-16 pb-8">

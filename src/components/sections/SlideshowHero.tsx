@@ -6,15 +6,11 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const images = [
-  '/images/dream-homes/10.webp',
-  '/images/dream-homes/11.webp',
   '/images/dream-homes/12.webp',
-  '/images/dream-homes/13.webp',
   '/images/dream-homes/14.webp',
   '/images/dream-homes/15.webp',
   '/images/dream-homes/17.webp',
   '/images/dream-homes/18.webp',
-  '/images/dream-homes/19.webp',
   '/images/dream-homes/20.webp',
 ]
 

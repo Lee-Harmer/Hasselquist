@@ -10,6 +10,7 @@ import ServiceCard from '@/components/sections/ServiceCard'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerChildren, { StaggerItem } from '@/components/motion/StaggerChildren'
 import SectionLabel from '@/components/ui/SectionLabel'
+import LazyVideo from '@/components/ui/LazyVideo'
 import { handymanServices, remodelingServices } from '@/lib/services'
 
 export const metadata: Metadata = {
@@ -380,12 +381,8 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-3">
                 {['/videos/1.mp4', '/videos/2.mp4'].map((src) => (
                   <div key={src} className="aspect-[9/16] overflow-hidden bg-stone-200 relative">
-                    <video
+                    <LazyVideo
                       src={src}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>

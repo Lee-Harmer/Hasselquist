@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 declare global {
   interface Window {
@@ -15,20 +15,40 @@ const reels = [
 ]
 
 export default function InstagramReels() {
+  const sectionRef = useRef<HTMLElement>(null)
+
   useEffect(() => {
-    if (window.instgrm) {
-      window.instgrm.Embeds.process()
-      return
+    const section = sectionRef.current
+    if (!section) return
+
+    const loadScript = () => {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process()
+        return
+      }
+      const script = document.createElement('script')
+      script.src = 'https://www.instagram.com/embed.js'
+      script.async = true
+      script.onload = () => window.instgrm?.Embeds.process()
+      document.body.appendChild(script)
     }
-    const script = document.createElement('script')
-    script.src = 'https://www.instagram.com/embed.js'
-    script.async = true
-    script.onload = () => window.instgrm?.Embeds.process()
-    document.body.appendChild(script)
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          loadScript()
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '300px' }
+    )
+
+    observer.observe(section)
+    return () => observer.disconnect()
   }, [])
 
   return (
-    <section className="section-padding bg-cream border-y border-stone-200">
+    <section ref={sectionRef} className="section-padding bg-cream border-y border-stone-200">
       <div className="container-editorial">
         <div className="text-center mb-12">
           <p className="font-sans text-[0.65rem] uppercase tracking-[0.18em] text-gold mb-3">Follow Along</p>

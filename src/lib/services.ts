@@ -32,7 +32,7 @@ export const services: Service[] = [
     title: 'Carpentry Services',
     shortTitle: 'Carpentry',
     category: 'handyman',
-    image: '/images/services/carpentry.png',
+    image: '/images/services/carpentry.jpg',
     icon: '🪵',
     description: 'Custom trim work, built-ins, doors, and fine woodworking throughout your home.',
     longDescription:
@@ -66,7 +66,7 @@ export const services: Service[] = [
     title: 'Plumbing Services',
     shortTitle: 'Plumbing',
     category: 'handyman',
-    image: '/images/services/bathroom-plumbing.png',
+    image: '/images/services/plumbing.jpg',
     icon: '🔧',
     description: 'Fixture installations, leak repairs, and plumbing upgrades done right the first time.',
     longDescription:
@@ -100,7 +100,7 @@ export const services: Service[] = [
     title: 'Electrical Services',
     shortTitle: 'Electrical',
     category: 'handyman',
-    image: '/images/services/electrical.png',
+    image: '/images/services/electrical.jpg',
     icon: '⚡',
     description: 'Safe, licensed electrical work  -  outlets, fixtures, fans, and panel upgrades.',
     longDescription:
@@ -133,7 +133,7 @@ export const services: Service[] = [
     title: 'Drywall Services',
     shortTitle: 'Drywall',
     category: 'handyman',
-    image: '/images/services/drywall.png',
+    image: '/images/services/drywall.jpg',
     icon: '🪣',
     description: 'Seamless drywall installation, patching, and finishing with a paint-ready surface.',
     longDescription:
@@ -166,7 +166,7 @@ export const services: Service[] = [
     title: 'Flooring Services',
     shortTitle: 'Flooring',
     category: 'handyman',
-    image: '/images/services/flooring.png',
+    image: '/images/services/flooring.jpg',
     icon: '🏠',
     description: 'Hardwood, LVP, tile, and laminate installation  -  level, tight, and built to last.',
     longDescription:
@@ -199,7 +199,7 @@ export const services: Service[] = [
     title: 'Deck & Fence Services',
     shortTitle: 'Decks & Fences',
     category: 'handyman',
-    image: '/images/services/decks-fences.png',
+    image: '/images/services/decks-fences.jpg',
     icon: '🌿',
     description: 'Deck construction, repairs, and fence installation that stand up to Minnesota winters.',
     longDescription:
@@ -297,7 +297,7 @@ export const services: Service[] = [
     title: 'Kitchen Remodeling',
     shortTitle: 'Kitchen',
     category: 'remodeling',
-    image: '/images/services/kitchen-remodel.png',
+    image: '/images/services/kitchen-remodel.jpg',
     icon: '🍳',
     description: 'Full kitchen transformations  -  from layout changes to custom cabinetry and finish work.',
     longDescription:
@@ -325,7 +325,7 @@ export const services: Service[] = [
     title: 'Bathroom Remodeling',
     shortTitle: 'Bathroom',
     category: 'remodeling',
-    image: '/images/services/bathroom-remodel.png',
+    image: '/images/services/bathroom-remodel.jpg',
     icon: '🛁',
     description: 'Bathroom renovations from powder rooms to master suites  -  every tile, fixture, and finish.',
     longDescription:
@@ -354,7 +354,7 @@ export const services: Service[] = [
     title: 'Basement Finishing',
     shortTitle: 'Basement',
     category: 'remodeling',
-    image: '/images/services/basement-remodel.png',
+    image: '/images/services/basement-remodel.jpg',
     icon: '🏗️',
     description: 'Transform your unfinished basement into a living space your family will love.',
     longDescription:
