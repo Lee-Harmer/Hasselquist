@@ -71,7 +71,7 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           access_key: accessKey,
-          subject: `New Quote Request — ${data.service}`,
+          subject: `New Quote Request: ${data.service}`,
           from_name: data.name,
           name: data.name,
           email: data.email,
@@ -98,15 +98,15 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-cream border border-stone-200 p-10 text-center">
+      <div className="bg-charcoal border border-cream/10 p-10 text-center">
         <div className="w-12 h-12 bg-gold/15 flex items-center justify-center mx-auto mb-5">
           <svg className="w-6 h-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
         <SectionLabel className="mb-3 text-center">Message Received</SectionLabel>
-        <h3 className="font-serif font-light text-h3 text-stone-900 mb-3">Thank You!</h3>
-        <p className="font-sans text-[0.9rem] text-stone-600 leading-relaxed">
+        <h3 className="font-serif font-light text-h3 text-cream mb-3">Thank You!</h3>
+        <p className="font-sans text-[0.9rem] text-cream/60 leading-relaxed">
           We&apos;ve received your message and will be in touch within one business day. In the meantime, feel free to call us at{' '}
           <a href="tel:+16122576073" className="text-gold hover:underline">612-257-6073</a>.
         </p>
@@ -130,7 +130,7 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
+          <label htmlFor="name" className="block font-sans text-[0.78rem] uppercase tracking-wider text-cream/50 mb-2">
             Full Name <span aria-hidden="true">*</span><span className="sr-only">(required)</span>
           </label>
           <input
@@ -141,14 +141,14 @@ export default function ContactForm() {
             aria-invalid={errors.name ? 'true' : undefined}
             aria-describedby={errors.name ? 'name-error' : undefined}
             {...register('name')}
-            className={`w-full bg-white border px-4 py-3 font-sans text-[0.9rem] text-stone-900 placeholder-stone-300 focus:outline-none focus:border-gold transition-colors duration-150 ${errors.name ? 'border-red-400' : 'border-stone-200'}`}
+            className={`w-full bg-[#232830] border px-4 py-3 font-sans text-[0.9rem] text-cream placeholder-cream/20 focus:outline-none focus:border-gold transition-colors duration-150 ${errors.name ? 'border-red-400' : 'border-cream/10'}`}
             placeholder="Jane Smith"
           />
           {errors.name && <p id="name-error" role="alert" className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.name.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="phone" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
+          <label htmlFor="phone" className="block font-sans text-[0.78rem] uppercase tracking-wider text-cream/50 mb-2">
             Phone Number <span aria-hidden="true">*</span><span className="sr-only">(required)</span>
           </label>
           <input
@@ -159,7 +159,7 @@ export default function ContactForm() {
             aria-invalid={errors.phone ? 'true' : undefined}
             aria-describedby={errors.phone ? 'phone-error' : undefined}
             {...register('phone')}
-            className={`w-full bg-white border px-4 py-3 font-sans text-[0.9rem] text-stone-900 placeholder-stone-300 focus:outline-none focus:border-gold transition-colors duration-150 ${errors.phone ? 'border-red-400' : 'border-stone-200'}`}
+            className={`w-full bg-[#232830] border px-4 py-3 font-sans text-[0.9rem] text-cream placeholder-cream/20 focus:outline-none focus:border-gold transition-colors duration-150 ${errors.phone ? 'border-red-400' : 'border-cream/10'}`}
             placeholder="612-555-0123"
           />
           {errors.phone && <p id="phone-error" role="alert" className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.phone.message}</p>}
@@ -167,7 +167,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
+        <label htmlFor="email" className="block font-sans text-[0.78rem] uppercase tracking-wider text-cream/50 mb-2">
           Email Address <span aria-hidden="true">*</span><span className="sr-only">(required)</span>
         </label>
         <input
@@ -178,14 +178,14 @@ export default function ContactForm() {
           aria-invalid={errors.email ? 'true' : undefined}
           aria-describedby={errors.email ? 'email-error' : undefined}
           {...register('email')}
-          className={`w-full bg-white border px-4 py-3 font-sans text-[0.9rem] text-stone-900 placeholder-stone-300 focus:outline-none focus:border-gold transition-colors duration-150 ${errors.email ? 'border-red-400' : 'border-stone-200'}`}
+          className={`w-full bg-[#232830] border px-4 py-3 font-sans text-[0.9rem] text-cream placeholder-cream/20 focus:outline-none focus:border-gold transition-colors duration-150 ${errors.email ? 'border-red-400' : 'border-cream/10'}`}
           placeholder="jane@example.com"
         />
         {errors.email && <p id="email-error" role="alert" className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.email.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="service" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
+        <label htmlFor="service" className="block font-sans text-[0.78rem] uppercase tracking-wider text-cream/50 mb-2">
           Service Needed <span aria-hidden="true">*</span><span className="sr-only">(required)</span>
         </label>
         <select
@@ -194,7 +194,7 @@ export default function ContactForm() {
           aria-invalid={errors.service ? 'true' : undefined}
           aria-describedby={errors.service ? 'service-error' : undefined}
           {...register('service')}
-          className={`w-full bg-white border px-4 py-3 font-sans text-[0.9rem] text-stone-900 focus:outline-none focus:border-gold transition-colors duration-150 appearance-none ${errors.service ? 'border-red-400' : 'border-stone-200'}`}
+          className={`w-full bg-[#232830] border px-4 py-3 font-sans text-[0.9rem] text-cream focus:outline-none focus:border-gold transition-colors duration-150 appearance-none ${errors.service ? 'border-red-400' : 'border-cream/10'}`}
         >
           <option value="">Select a service...</option>
           {services.map((s) => (
@@ -205,7 +205,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
+        <label htmlFor="message" className="block font-sans text-[0.78rem] uppercase tracking-wider text-cream/50 mb-2">
           Tell Us About Your Project <span aria-hidden="true">*</span><span className="sr-only">(required)</span>
         </label>
         <textarea
@@ -215,20 +215,20 @@ export default function ContactForm() {
           aria-invalid={errors.message ? 'true' : undefined}
           aria-describedby={errors.message ? 'message-error' : undefined}
           {...register('message')}
-          className={`w-full bg-white border px-4 py-3 font-sans text-[0.9rem] text-stone-900 placeholder-stone-300 focus:outline-none focus:border-gold transition-colors duration-150 resize-none ${errors.message ? 'border-red-400' : 'border-stone-200'}`}
+          className={`w-full bg-[#232830] border px-4 py-3 font-sans text-[0.9rem] text-cream placeholder-cream/20 focus:outline-none focus:border-gold transition-colors duration-150 resize-none ${errors.message ? 'border-red-400' : 'border-cream/10'}`}
           placeholder="Describe your project, timeline, and any questions you have..."
         />
         {errors.message && <p id="message-error" role="alert" className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.message.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="howHeard" className="block font-sans text-[0.78rem] uppercase tracking-wider text-stone-500 mb-2">
+        <label htmlFor="howHeard" className="block font-sans text-[0.78rem] uppercase tracking-wider text-cream/50 mb-2">
           How Did You Hear About Us?
         </label>
         <select
           id="howHeard"
           {...register('howHeard')}
-          className="w-full bg-white border border-stone-200 px-4 py-3 font-sans text-[0.9rem] text-stone-900 focus:outline-none focus:border-gold transition-colors duration-150 appearance-none"
+          className="w-full bg-[#232830] border border-cream/10 px-4 py-3 font-sans text-[0.9rem] text-cream focus:outline-none focus:border-gold transition-colors duration-150 appearance-none"
         >
           <option value="">Select one (optional)</option>
           {howHeardOptions.map((o) => (
@@ -251,9 +251,9 @@ export default function ContactForm() {
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
 
-      <p className="font-sans text-[0.75rem] text-stone-400 text-center">
+      <p className="font-sans text-[1rem] text-cream/60 text-center">
         Or call us directly at{' '}
-        <a href="tel:+16122576073" className="text-gold hover:underline">612-257-6073</a>
+        <a href="tel:+16122576073" className="text-gold hover:text-gold-light font-medium transition-colors duration-150">612-257-6073</a>
       </p>
     </form>
   )

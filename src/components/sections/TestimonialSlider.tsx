@@ -27,7 +27,7 @@ const testimonials = [
   },
   {
     id: 2,
-    quote: 'We recently had our bathroom remodeled and the experience was fantastic from start to finish. Hasselquist Contracting has a professional team, they are punctual, and incredibly detail-oriented. They took the time to listen to what we wanted, offered helpful suggestions, and delivered a final result that exceeded our expectations. The quality of the workmanship really shows — everything from the tile work to the fixtures looks amazing. Our new bathroom looks beautiful and feels like a spa. We will be using them to replace our deck this summer.',
+    quote: 'We recently had our bathroom remodeled and the experience was fantastic from start to finish. Hasselquist Contracting has a professional team, they are punctual, and incredibly detail-oriented. They took the time to listen to what we wanted, offered helpful suggestions, and delivered a final result that exceeded our expectations. The quality of the workmanship really shows; everything from the tile work to the fixtures looks amazing. Our new bathroom looks beautiful and feels like a spa. We will be using them to replace our deck this summer.',
     author: 'Maverick Perry',
     service: 'Bathroom Remodeling',
     verified: true,
@@ -64,21 +64,18 @@ export default function TestimonialSlider() {
   const t = testimonials[current]
 
   return (
-    <section className="section-padding bg-stone-50">
+    <section className="section-padding bg-dark-base">
       <div className="container-editorial">
         <FadeIn>
           <div className="text-center mb-14">
             <SectionLabel className="mb-4">Client Reviews</SectionLabel>
-            <h2 className="font-serif font-light text-h2 md:text-h1 text-stone-900">
+            <h2 className="font-serif font-light text-h2 md:text-h1 text-cream">
               What Our Clients Say
             </h2>
             {/* Aggregate rating */}
             <div className="flex items-center justify-center gap-3 mt-5">
               <StarRating />
-              <span className="font-sans text-[0.8rem] text-stone-500">5.0 · {testimonials.length} Google reviews</span>
-              <svg aria-hidden="true" className="w-4 h-4 text-stone-300" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z"/>
-              </svg>
+              <span className="font-sans text-[0.8rem] text-cream/50">5.0 · {testimonials.length} reviews</span>
             </div>
           </div>
         </FadeIn>
@@ -98,7 +95,7 @@ export default function TestimonialSlider() {
               transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
             >
               {/* Review card */}
-              <div className="bg-white border border-stone-100 shadow-sm px-10 py-10 md:px-14 md:py-12 relative">
+              <div className="bg-charcoal border border-cream/[0.07] shadow-sm px-10 py-10 md:px-14 md:py-12 relative">
                 {/* Quote mark */}
                 <div aria-hidden="true" className="text-gold/20 font-serif text-[5rem] leading-none absolute top-4 left-8 select-none">&ldquo;</div>
 
@@ -106,16 +103,16 @@ export default function TestimonialSlider() {
                   <div className="flex items-center justify-between mb-6">
                     <StarRating />
                     {t.verified && (
-                      <span className="flex items-center gap-1.5 font-sans text-[0.65rem] uppercase tracking-wider text-stone-400">
+                      <span className="flex items-center gap-1.5 font-sans text-[0.65rem] uppercase tracking-wider text-cream/35">
                         <svg aria-hidden="true" className="w-3 h-3 text-gold" viewBox="0 0 24 24" fill="currentColor">
                           <path fillRule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.491 4.491 0 01-3.497-1.307 4.491 4.491 0 01-1.307-3.497A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.491 4.491 0 011.307-3.497 4.491 4.491 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
                         </svg>
-                        Verified Google Review
+                        Verified Review
                       </span>
                     )}
                   </div>
 
-                  <p className="font-serif font-light text-[1.2rem] md:text-[1.35rem] leading-[1.65] text-stone-700 mb-8">
+                  <p className="font-serif font-light text-[1.2rem] md:text-[1.35rem] leading-[1.65] text-cream/75 mb-8">
                     &ldquo;{t.quote}&rdquo;
                   </p>
 
@@ -126,8 +123,8 @@ export default function TestimonialSlider() {
                       </span>
                     </div>
                     <div>
-                      <p className="font-sans font-medium text-[0.85rem] text-stone-900">{t.author}</p>
-                      <p className="font-sans text-[0.72rem] text-stone-400 mt-0.5">{t.service}</p>
+                      <p className="font-sans font-medium text-[0.85rem] text-cream">{t.author}</p>
+                      <p className="font-sans text-[0.72rem] text-cream/35 mt-0.5">{t.service}</p>
                     </div>
                   </div>
                 </div>
@@ -139,7 +136,7 @@ export default function TestimonialSlider() {
           <div className="flex items-center justify-center gap-6 mt-10" role="group" aria-label="Review navigation">
             <button
               onClick={prev}
-              className="w-12 h-12 border border-stone-200 hover:border-gold flex items-center justify-center text-stone-400 hover:text-gold transition-colors duration-200"
+              className="w-12 h-12 border border-cream/10 hover:border-gold flex items-center justify-center text-cream/35 hover:text-gold transition-colors duration-200"
               aria-label="Previous review"
             >
               <svg aria-hidden="true" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -158,7 +155,7 @@ export default function TestimonialSlider() {
                   className="flex items-center justify-center w-8 h-8"
                 >
                   <span className={`block rounded-full transition-all duration-300 pointer-events-none ${
-                    i === current ? 'bg-gold w-5 h-1.5' : 'bg-stone-200 hover:bg-stone-300 w-1.5 h-1.5'
+                    i === current ? 'bg-gold w-5 h-1.5' : 'bg-cream/10 hover:bg-cream/20 w-1.5 h-1.5'
                   }`} />
                 </button>
               ))}
@@ -166,13 +163,27 @@ export default function TestimonialSlider() {
 
             <button
               onClick={next}
-              className="w-12 h-12 border border-stone-200 hover:border-gold flex items-center justify-center text-stone-400 hover:text-gold transition-colors duration-200"
+              className="w-12 h-12 border border-cream/10 hover:border-gold flex items-center justify-center text-cream/35 hover:text-gold transition-colors duration-200"
               aria-label="Next review"
             >
               <svg aria-hidden="true" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
             </button>
+          </div>
+
+          <div className="text-center mt-8">
+            <a
+              href="https://share.google/jrRoHcnd8H8KixgAJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-sans text-[0.8rem] text-cream/50 hover:text-cream/90 transition-colors duration-200 underline underline-offset-4"
+            >
+              See all reviews on Google
+              <svg aria-hidden="true" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>

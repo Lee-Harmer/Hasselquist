@@ -1,16 +1,23 @@
-import { Cormorant_Garamond, Inter } from 'next/font/google'
+import { Bodoni_Moda, Figtree, Caveat } from 'next/font/google'
 
-export const cormorant = Cormorant_Garamond({
+export const bodoni = Bodoni_Moda({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
+  weight: ['400', '500', '700'],
   style: ['normal', 'italic'],
-  variable: '--font-cormorant',
+  variable: '--font-display',
   display: 'swap',
 })
 
-export const inter = Inter({
+export const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-caveat',
+  display: 'swap',
+})
+
+export const figtree = Figtree({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
-  variable: '--font-inter',
+  variable: '--font-body',
   display: 'swap',
 })

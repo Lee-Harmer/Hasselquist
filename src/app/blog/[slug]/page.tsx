@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import Image from 'next/image'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getPostBySlug, getAllSlugs, getRelatedPosts } from '@/lib/mdx'
@@ -103,18 +102,6 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Cover Image */}
-      <div className="relative aspect-[16/6] max-h-[480px] overflow-hidden bg-stone-200">
-        <Image
-          src={post.frontmatter.coverImage}
-          alt={post.frontmatter.title}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-      </div>
-
       {/* Content */}
       <section className="section-padding bg-stone-50">
         <div className="container-editorial">
@@ -171,15 +158,6 @@ export default async function BlogPostPage({ params }: PageProps) {
                   href={`/blog/${p.slug}`}
                   className="group bg-white hover:bg-cream transition-colors duration-300"
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-stone-100">
-                    <Image
-                      src={p.frontmatter.coverImage}
-                      alt={p.frontmatter.title}
-                      fill
-                      sizes="33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                    />
-                  </div>
                   <div className="p-5">
                     <p className="label-style text-gold mb-2">{p.frontmatter.category}</p>
                     <h3 className="font-serif font-medium text-[1.05rem] text-stone-900 leading-snug group-hover:text-charcoal transition-colors">

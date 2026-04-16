@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import HeroSimple from '@/components/sections/HeroSimple'
-import CtaBanner from '@/components/sections/CtaBanner'
 import InstagramReels from '@/components/sections/InstagramReels'
 import FadeIn from '@/components/motion/FadeIn'
 
@@ -19,24 +18,24 @@ export default function AboutPage() {
         eyebrow="About Hasselquist Contracting"
         title="Every Home Has a Story. Ours Started Small."
         breadcrumbs={[{ label: 'About' }]}
-        imageSrc="/images/about-hero.png"
+        imageSrc="/images/about.webp"
       />
 
       {/* Main Story */}
-      <section className="section-padding bg-stone-50">
+      <section className="section-padding bg-dark-base">
         <div className="container-editorial">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
             {/* Copy */}
             <FadeIn direction="right">
-              <div className="space-y-6 font-sans text-[1rem] text-stone-600 leading-relaxed">
+              <div className="space-y-6 font-sans text-[1rem] text-cream/60 leading-relaxed">
                 <p>
                   Hasselquist Contracting began with simple handyman jobs  -  helping neighbours, friends, and local homeowners with the kinds of repairs most companies overlook. Small drywall patches. Minor fixes. The kind of work that builds trust one home at a time.
                 </p>
                 <p>
                   From those early days, word spread. Not because of marketing, but because people felt taken care of.
                 </p>
-                <p className="font-sans text-[1rem] text-stone-900 font-medium">
+                <p className="font-sans text-[1rem] text-cream font-medium">
                   Today, that same foundation has grown into something much bigger.
                 </p>
                 <p>
@@ -54,11 +53,11 @@ export default function AboutPage() {
               </div>
 
               {/* Closing statement */}
-              <div className="mt-12 border-l-2 border-gold pl-7 space-y-3">
-                <p className="font-serif font-light italic text-[1.25rem] text-stone-800 leading-snug">
+              <div className="mt-12 pt-8 border-t border-gold/40 space-y-3">
+                <p className="font-serif font-light italic text-[1.25rem] text-cream/90 leading-snug">
                   From small repairs to full transformations, our approach stays the same.
                 </p>
-                <div className="space-y-1 font-sans text-[0.875rem] text-stone-500">
+                <div className="space-y-1 font-sans text-[0.875rem] text-cream/50">
                   <p>Do good work.</p>
                   <p>Treat people right.</p>
                   <p>Build spaces that are meant to be lived in.</p>
@@ -72,7 +71,7 @@ export default function AboutPage() {
               <div className="relative lg:sticky lg:top-32 space-y-6">
                 {/* Erik portrait */}
                 <div className="relative">
-                  <div className="aspect-[1/1] relative overflow-hidden bg-cream-dark">
+                  <div className="aspect-[1/1] relative overflow-hidden bg-charcoal">
                     <Image
                       src="/images/photo-of-erik.webp"
                       alt="Erik Hasselquist  -  owner of Hasselquist Contracting, Shakopee MN"
@@ -82,11 +81,11 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="absolute -bottom-5 -right-5 w-28 h-28 border border-gold/30 -z-10" />
-                  <div className="absolute -top-5 -left-5 w-20 h-20 bg-cream -z-10" />
+                  <div className="absolute -top-5 -left-5 w-20 h-20 bg-dark-base -z-10" />
                 </div>
 
                 {/* Vehicle / branding photo */}
-                <div className="aspect-[16/9] relative overflow-hidden bg-cream-dark">
+                <div className="aspect-[16/9] relative overflow-hidden bg-charcoal">
                   <Image
                     src="/images/eriks-vehicle.webp"
                     alt="Hasselquist Contracting branded vehicle serving the Twin Cities"
@@ -102,7 +101,7 @@ export default function AboutPage() {
       </section>
 
       {/* Credentials Strip */}
-      <section className="py-14 bg-stone-50 border-y border-stone-200">
+      <section className="py-14 bg-dark-base border-y border-cream/10">
         <div className="container-editorial">
           <FadeIn>
             <div className="flex flex-wrap items-center justify-center gap-0">
@@ -146,12 +145,12 @@ export default function AboutPage() {
                 },
               ].map((item, i) => (
                 <div key={item.label} className="flex items-center">
-                  {i > 0 && <div className="w-px h-10 bg-stone-200 mx-8" />}
+                  {i > 0 && <div className="w-px h-10 bg-cream/10 mx-8" />}
                   <div className="flex items-start gap-3">
                     <div className="mt-0.5">{item.icon}</div>
                     <div>
-                      <p className="font-sans text-[0.78rem] font-medium text-stone-800 leading-tight">{item.label}</p>
-                      <p className="font-sans text-[0.68rem] text-stone-400 tracking-wide mt-0.5">{item.sublabel}</p>
+                      <p className="font-sans text-[0.78rem] font-medium text-cream/90 leading-tight">{item.label}</p>
+                      <p className="font-sans text-[0.68rem] text-cream/35 tracking-wide mt-0.5">{item.sublabel}</p>
                     </div>
                   </div>
                 </div>
@@ -164,10 +163,6 @@ export default function AboutPage() {
 
       <InstagramReels />
 
-      <CtaBanner
-        title="Let's Build Something Together"
-        subtitle="Ready to work with a team that stays connected long after the project is done? We'd love to hear from you."
-      />
     </>
   )
 }

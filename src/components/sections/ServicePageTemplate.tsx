@@ -7,6 +7,7 @@ import FadeIn from '@/components/motion/FadeIn'
 import StaggerChildren, { StaggerItem } from '@/components/motion/StaggerChildren'
 import SectionLabel from '@/components/ui/SectionLabel'
 import Divider from '@/components/ui/Divider'
+import QuirkyComment from '@/components/ui/QuirkyComment'
 
 interface ServicePageTemplateProps {
   service: Service
@@ -163,6 +164,20 @@ export default function ServicePageTemplate({
         </section>
       )}
 
+      {service.quirkyComment && (
+        <div className="bg-dark-base pt-12 pb-0">
+          <div className="container-editorial flex justify-center">
+            <QuirkyComment
+              text={service.quirkyComment.text}
+              arrow={service.quirkyComment.arrow ?? 'down-right'}
+              rotate={service.quirkyComment.rotate ?? -2}
+              align={service.quirkyComment.align ?? 'center'}
+              dark
+              className="max-w-sm"
+            />
+          </div>
+        </div>
+      )}
       <CtaBanner />
     </>
   )

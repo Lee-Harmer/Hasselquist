@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import HeroSimple from '@/components/sections/HeroSimple'
-import CtaBanner from '@/components/sections/CtaBanner'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerChildren, { StaggerItem } from '@/components/motion/StaggerChildren'
 import SectionLabel from '@/components/ui/SectionLabel'
@@ -10,7 +9,7 @@ import { cities } from '@/lib/cities'
 export const metadata: Metadata = {
   title: 'Service Areas | Handyman & Remodeling Twin Cities MN',
   description:
-    'Hasselquist Contracting serves the Twin Cities metro and surrounding areas. Based in Shakopee, MN — we work throughout Scott, Carver, Dakota, and Hennepin counties and beyond.',
+    'Hasselquist Contracting serves the Twin Cities metro and surrounding areas. Based in Shakopee, MN, we work throughout Scott, Carver, Dakota, and Hennepin counties and beyond.',
   alternates: { canonical: '/service-areas' },
 }
 
@@ -20,8 +19,9 @@ export default function ServiceAreasPage() {
       <HeroSimple
         eyebrow="Where We Work"
         title="Serving the Twin Cities Metro"
-        subtitle="Based in Shakopee, we work throughout the Twin Cities and surrounding areas. The cities below are our primary service area — but if you don't see yours, just reach out."
+        subtitle="Based in Shakopee, we work throughout the Twin Cities and surrounding areas. The cities below are our primary service area, but if you don't see yours, just reach out."
         breadcrumbs={[{ label: 'Service Areas' }]}
+        imageSrc="/images/twin.webp"
       />
 
       <section className="section-padding bg-stone-50">
@@ -30,7 +30,7 @@ export default function ServiceAreasPage() {
             <div className="max-w-2xl mb-14">
               <SectionLabel className="mb-4">Our Coverage Area</SectionLabel>
               <p className="font-sans text-[1rem] text-stone-600 leading-relaxed">
-                We regularly work across Scott, Carver, Dakota, and Hennepin counties — from Shakopee and Eden Prairie to Bloomington and beyond. The cities below represent our primary coverage area, but they&apos;re not a hard boundary. If your project sounds like a good fit, we&apos;d love to hear about it regardless of where you are.
+                We regularly work across Scott, Carver, Dakota, and Hennepin counties, from Shakopee and Eden Prairie to Bloomington and beyond. The cities below represent our primary coverage area, but they&apos;re not a hard boundary. If your project sounds like a good fit, we&apos;d love to hear about it regardless of where you are.
               </p>
             </div>
           </FadeIn>
@@ -43,7 +43,7 @@ export default function ServiceAreasPage() {
                   className="group flex items-start justify-between p-5 bg-cream hover:bg-cream-dark border border-stone-200 hover:border-gold/40 transition-all duration-200"
                 >
                   <div>
-                    <h2 className="font-serif font-medium text-h4 text-stone-900 group-hover:text-charcoal transition-colors duration-200">
+                    <h2 className="font-serif font-medium text-h4 text-stone-900 group-hover:text-gold transition-colors duration-200">
                       {city.name}
                     </h2>
                     <p className="font-sans text-[0.75rem] text-stone-400 mt-1">
@@ -70,7 +70,7 @@ export default function ServiceAreasPage() {
               We&apos;re More Flexible Than a List
             </h3>
             <p className="font-sans text-[0.9rem] text-cream/60 mb-6 max-w-lg mx-auto">
-              These cities reflect where we work most often — not the limits of where we&apos;ll go. If you have a project worth doing, reach out and we&apos;ll have an honest conversation about it.
+              These cities reflect where we work most often, not the limits of where we&apos;ll go. If you have a project worth doing, reach out and we&apos;ll have an honest conversation about it.
             </p>
             <a
               href="tel:+16122576073"
@@ -82,7 +82,6 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      <CtaBanner />
     </>
   )
 }

@@ -18,43 +18,43 @@ interface ProcessStepsProps {
 const defaultSteps: Step[] = [
   {
     number: '01',
-    title: 'Reach Out',
+    title: 'Tell Us What You\'re Thinking',
     description:
-      'Call, email, or fill in the contact form. Tell us what you have in mind and we\'ll be in touch within one business day.',
+      'Call, email, or fill out the form — no commitment, no pressure. We respond within a few hours, not days. Even a rough idea is enough to start.',
   },
   {
     number: '02',
-    title: 'Free Consultation',
+    title: 'We Come to You — Free',
     description:
-      'We walk through your space, understand your vision, and give you a clear, honest quote.',
+      'Erik walks through your space in person, listens to your vision, and gives you a clear written quote. No vague estimates, no hidden surprises later. Usually within the same week.',
   },
   {
     number: '03',
-    title: 'Skilled Execution',
+    title: 'Clean Work. Regular Updates.',
     description:
-      'We work cleanly, efficiently, and with real respect for your home. You\'re kept informed at every stage.',
+      'We treat your home like it\'s ours — protected floors, contained dust, tools put away each day. You hear from us regularly so there are no anxious "what\'s happening?" moments.',
   },
   {
     number: '04',
-    title: 'Final Walkthrough',
+    title: 'Done Means Done',
     description:
-      'We go through everything together. We\'re not done until you\'re completely happy with the result.',
+      'We walk through every detail together before we call it finished. Punch list items get handled — not forgotten. You shouldn\'t have to chase a contractor after they\'ve been paid.',
   },
 ]
 
 export default function ProcessSteps({
   eyebrow = 'How It Works',
-  title = 'A Process That Respects Your Home & Time',
+  title = 'No Surprises. No Ghosting. No Mess Left Behind.',
   steps = defaultSteps,
   dark = false,
 }: ProcessStepsProps) {
   return (
-    <section className={`section-padding ${dark ? 'bg-charcoal' : 'bg-cream'}`}>
+    <section className={`section-padding ${dark ? 'bg-dark-base' : 'bg-charcoal'}`}>
       <div className="container-editorial">
         <FadeIn>
           <div className="text-center mb-16">
             <SectionLabel className="mb-4" light={dark}>{eyebrow}</SectionLabel>
-            <h2 className={`font-serif font-light text-h2 md:text-h1 ${dark ? 'text-cream' : 'text-stone-900'}`}>
+            <h2 className={`font-serif font-light text-h2 md:text-h1 ${dark ? 'text-cream' : 'text-cream'}`}>
               {title}
             </h2>
           </div>
@@ -70,10 +70,10 @@ export default function ProcessSteps({
                   {step.number}
                 </span>
                 <div className={`w-8 h-px mb-4 ${dark ? 'bg-gold/40' : 'bg-gold/50'}`} />
-                <h3 className={`font-serif font-medium text-h4 mb-3 ${dark ? 'text-cream' : 'text-stone-900'}`}>
+                <h3 className={`font-serif font-medium text-h4 mb-3 ${dark ? 'text-cream' : 'text-cream'}`}>
                   {step.title}
                 </h3>
-                <p className={`font-sans text-[0.875rem] leading-relaxed ${dark ? 'text-cream/55' : 'text-stone-600'}`}>
+                <p className={`font-sans text-[0.875rem] leading-relaxed ${dark ? 'text-cream/55' : 'text-cream/60'}`}>
                   {step.description}
                 </p>
               </div>

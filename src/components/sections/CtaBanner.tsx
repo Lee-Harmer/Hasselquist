@@ -15,10 +15,9 @@ export default function CtaBanner({
   phone = true,
 }: CtaBannerProps) {
   return (
-    <section className="bg-charcoal relative overflow-hidden section-padding-sm">
+    <section className="bg-dark-base relative overflow-hidden section-padding-sm">
       {/* Subtle gold texture lines */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gold/20" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gold/20" />
         <div className="absolute top-1/2 left-16 w-24 h-px bg-gold/10 -translate-y-1/2" />
         <div className="absolute top-1/2 right-16 w-24 h-px bg-gold/10 -translate-y-1/2" />

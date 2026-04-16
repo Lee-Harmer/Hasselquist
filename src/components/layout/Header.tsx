@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { handymanServices, remodelingServices } from '@/lib/services'
 
 const navLinkClass =
@@ -29,15 +30,21 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [remodelingOpen, setRemodelingOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === '/'
 
   const servicesRef = useRef<HTMLDivElement>(null)
   const remodelingRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
+    const handleScroll = () => {
+      const threshold = isHome ? window.innerHeight * 0.75 : 20
+      setScrolled(window.scrollY > threshold)
+    }
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [isHome])
 
   // Close dropdowns + mobile menu on Escape
   useEffect(() => {
@@ -114,8 +121,10 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm py-3' : 'bg-white/60 backdrop-blur-sm py-5'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isHome && !scrolled
+            ? '-translate-y-full'
+            : 'translate-y-0 bg-cream/70 backdrop-blur-md shadow-sm py-3'
         }`}
       >
         <div className="container-editorial flex items-center justify-between">
@@ -136,7 +145,7 @@ export default function Header() {
               <span className="block font-serif text-[1.1rem] font-medium tracking-wide text-stone-900 leading-tight">
                 Hasselquist
               </span>
-              <span className="block font-sans text-[0.6rem] uppercase tracking-[0.15em] text-gold">
+              <span className="block font-sans text-[0.6rem] uppercase tracking-[0.15em] text-stone-500">
                 Contracting
               </span>
             </div>
@@ -162,19 +171,19 @@ export default function Header() {
               </button>
 
               {servicesOpen && (
-                <div id="services-menu" role="menu" className="absolute top-full left-0 mt-3 w-52 bg-white border border-stone-100 shadow-xl py-2 z-50">
+                <div id="services-menu" role="menu" className="absolute top-full left-0 mt-3 w-52 bg-cream/95 backdrop-blur-md border border-stone-200 shadow-xl py-2 z-50">
                   {handymanServices.map((s) => (
                     <Link
                       key={s.slug}
                       href={`/services/${s.slug}`}
                       role="menuitem"
                       onClick={() => setServicesOpen(false)}
-                      className="block px-5 py-2.5 font-sans text-[0.8rem] text-stone-700 hover:text-gold hover:bg-stone-50 transition-colors duration-150"
+                      className="block px-5 py-2.5 font-sans text-[0.8rem] text-stone-700 hover:text-gold hover:bg-cream-dark transition-colors duration-150"
                     >
                       {s.shortTitle}
                     </Link>
                   ))}
-                  <div className="border-t border-stone-100 mt-1 pt-1">
+                  <div className="border-t border-stone-200 mt-1 pt-1">
                     <Link
                       href="/services"
                       role="menuitem"
@@ -202,19 +211,19 @@ export default function Header() {
               </button>
 
               {remodelingOpen && (
-                <div id="remodeling-menu" role="menu" className="absolute top-full left-0 mt-3 w-52 bg-white border border-stone-100 shadow-xl py-2 z-50">
+                <div id="remodeling-menu" role="menu" className="absolute top-full left-0 mt-3 w-52 bg-cream/95 backdrop-blur-md border border-stone-200 shadow-xl py-2 z-50">
                   {remodelingServices.map((s) => (
                     <Link
                       key={s.slug}
                       href={`/remodeling/${s.slug}`}
                       role="menuitem"
                       onClick={() => setRemodelingOpen(false)}
-                      className="block px-5 py-2.5 font-sans text-[0.8rem] text-stone-700 hover:text-gold hover:bg-stone-50 transition-colors duration-150"
+                      className="block px-5 py-2.5 font-sans text-[0.8rem] text-stone-700 hover:text-gold hover:bg-cream-dark transition-colors duration-150"
                     >
                       {s.shortTitle} Remodeling
                     </Link>
                   ))}
-                  <div className="border-t border-stone-100 mt-1 pt-1">
+                  <div className="border-t border-stone-200 mt-1 pt-1">
                     <Link
                       href="/remodeling"
                       role="menuitem"

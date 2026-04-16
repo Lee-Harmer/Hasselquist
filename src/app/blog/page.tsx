@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import HeroSimple from '@/components/sections/HeroSimple'
-import CtaBanner from '@/components/sections/CtaBanner'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerChildren, { StaggerItem } from '@/components/motion/StaggerChildren'
 import SectionLabel from '@/components/ui/SectionLabel'
+import QuirkyComment from '@/components/ui/QuirkyComment'
 import { getAllPosts } from '@/lib/mdx'
 import { format } from 'date-fns'
 
@@ -18,6 +17,8 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   const posts = getAllPosts()
+  const heroPost = posts.find((p) => p.frontmatter.featured) ?? posts[0]
+  const restPosts = posts.filter((p) => p.slug !== heroPost?.slug)
 
   return (
     <>
@@ -26,98 +27,108 @@ export default function BlogPage() {
         title="Home Improvement Ideas & Guides"
         subtitle="Expert advice, cost guides, and renovation inspiration for Twin Cities homeowners."
         breadcrumbs={[{ label: 'Journal' }]}
+        imageSrc="/images/blog.webp"
       />
 
-      <section className="section-padding bg-stone-50">
+      <section className="section-padding bg-cream">
         <div className="container-editorial">
           {posts.length === 0 ? (
             <FadeIn>
               <div className="text-center py-20">
                 <SectionLabel className="mb-4">Coming Soon</SectionLabel>
-                <h2 className="font-serif font-light text-h2 text-stone-900 mb-4">Articles Coming Soon</h2>
+                <h2 className="font-serif font-light text-h2 text-charcoal mb-4">Articles Coming Soon</h2>
                 <p className="font-sans text-stone-500">Check back soon for home improvement guides and renovation tips.</p>
               </div>
             </FadeIn>
           ) : (
             <>
-              {/* Featured post */}
-              {posts[0] && (
-                <FadeIn className="mb-14">
-                  <Link href={`/blog/${posts[0].slug}`} className="group grid grid-cols-1 md:grid-cols-2 gap-0 bg-cream hover:bg-cream-dark transition-colors duration-300">
-                    <div className="relative aspect-[4/3] md:aspect-auto overflow-hidden bg-stone-200">
-                      <Image
-                        src={posts[0].frontmatter.coverImage}
-                        alt={posts[0].frontmatter.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                      />
-                    </div>
-                    <div className="p-8 md:p-12 flex flex-col justify-center">
-                      <p className="label-style text-gold mb-3">{posts[0].frontmatter.category}</p>
-                      <h2 className="font-serif font-light text-h2 text-stone-900 mb-4 leading-tight group-hover:text-charcoal transition-colors duration-200">
-                        {posts[0].frontmatter.title}
-                      </h2>
-                      <p className="font-sans text-[0.9rem] text-stone-600 leading-relaxed mb-6">
-                        {posts[0].frontmatter.description}
-                      </p>
-                      <div className="flex items-center gap-4 font-sans text-[0.75rem] text-stone-400 mb-6">
-                        <span>{format(new Date(posts[0].frontmatter.date), 'MMMM d, yyyy')}</span>
-                        <span>·</span>
-                        <span>{posts[0].frontmatter.readTime}</span>
+              {/* Quirky intro */}
+              <FadeIn>
+                <div className="flex justify-end mb-8">
+                  <QuirkyComment
+                    text="You found our insider page. Consider yourself a VIP."
+                    arrow="down-left"
+                    rotate={2}
+                    align="right"
+                  />
+                </div>
+              </FadeIn>
+
+              {/* Hero post */}
+              {heroPost && (
+                <FadeIn>
+                  <Link
+                    href={`/blog/${heroPost.slug}`}
+                    className="group flex flex-col md:flex-row bg-charcoal hover:bg-dark-base border border-charcoal hover:border-gold/40 transition-all duration-300 mb-6"
+                  >
+                    <div className="p-10 md:p-14 flex flex-col justify-between w-full">
+                      <div>
+                        <div className="flex items-center gap-3 mb-6">
+                          <p className="label-style text-gold">{heroPost.frontmatter.category}</p>
+                          <span className="font-sans text-[0.65rem] uppercase tracking-widest text-gold/50 border border-gold/30 px-2 py-0.5">Featured</span>
+                        </div>
+                        <h2 className="font-serif font-light text-[1.9rem] md:text-[2.4rem] leading-[1.1] text-cream group-hover:text-gold transition-colors duration-200 mb-5 text-balance">
+                          {heroPost.frontmatter.title}
+                        </h2>
+                        <p className="font-sans text-[0.9rem] text-cream/55 leading-relaxed max-w-xl">
+                          {heroPost.frontmatter.description}
+                        </p>
                       </div>
-                      <div className="flex items-center gap-1.5 text-gold text-[0.78rem] font-sans font-medium uppercase tracking-wider">
-                        Read Article
-                        <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                        </svg>
+                      <div className="flex items-center justify-between mt-10">
+                        <div className="flex items-center gap-3 font-sans text-[0.72rem] text-cream/30">
+                          <span>{format(new Date(heroPost.frontmatter.date), 'MMM d, yyyy')}</span>
+                          <span>·</span>
+                          <span>{heroPost.frontmatter.readTime}</span>
+                        </div>
+                        <span className="font-sans text-[0.78rem] uppercase tracking-wider text-gold/60 group-hover:text-gold transition-colors duration-200 flex items-center gap-2">
+                          Read Article
+                          <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                          </svg>
+                        </span>
                       </div>
                     </div>
                   </Link>
                 </FadeIn>
               )}
 
-              {/* Remaining posts grid */}
-              <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {posts.slice(1).map((post) => (
-                  <StaggerItem key={post.slug}>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="group block bg-white hover:bg-cream transition-colors duration-300"
-                    >
-                      <div className="relative aspect-[16/9] overflow-hidden bg-stone-100">
-                        <Image
-                          src={post.frontmatter.coverImage}
-                          alt={post.frontmatter.title}
-                          fill
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                        />
-                      </div>
-                      <div className="p-6">
-                        <p className="label-style text-gold mb-2">{post.frontmatter.category}</p>
-                        <h3 className="font-serif font-medium text-h4 text-stone-900 mb-2 leading-snug group-hover:text-charcoal transition-colors duration-200">
-                          {post.frontmatter.title}
-                        </h3>
-                        <p className="font-sans text-[0.83rem] text-stone-500 line-clamp-2 mb-4">
-                          {post.frontmatter.description}
-                        </p>
-                        <div className="flex items-center gap-3 font-sans text-[0.72rem] text-stone-400">
-                          <span>{format(new Date(post.frontmatter.date), 'MMM d, yyyy')}</span>
-                          <span>·</span>
-                          <span>{post.frontmatter.readTime}</span>
+              {/* Remaining posts */}
+              {restPosts.length > 0 && (
+                <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {restPosts.map((post) => (
+                    <StaggerItem key={post.slug}>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        className="group flex flex-col h-full bg-charcoal hover:bg-dark-base border border-charcoal hover:border-gold/40 transition-all duration-300"
+                      >
+                        <div className="p-7 flex flex-col flex-1">
+                          <p className="label-style text-gold mb-4">{post.frontmatter.category}</p>
+                          <h3 className="font-serif font-light text-[1.3rem] leading-snug text-cream group-hover:text-gold transition-colors duration-200 mb-3 flex-1">
+                            {post.frontmatter.title}
+                          </h3>
+                          <p className="font-sans text-[0.83rem] text-cream/50 leading-relaxed line-clamp-2 mb-6">
+                            {post.frontmatter.description}
+                          </p>
+                          <div className="flex items-center justify-between mt-auto">
+                            <div className="flex items-center gap-3 font-sans text-[0.72rem] text-cream/30">
+                              <span>{format(new Date(post.frontmatter.date), 'MMM d, yyyy')}</span>
+                              <span>·</span>
+                              <span>{post.frontmatter.readTime}</span>
+                            </div>
+                            <svg className="w-3.5 h-3.5 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                          </div>
                         </div>
-                      </div>
-                    </Link>
-                  </StaggerItem>
-                ))}
-              </StaggerChildren>
+                      </Link>
+                    </StaggerItem>
+                  ))}
+                </StaggerChildren>
+              )}
             </>
           )}
         </div>
       </section>
-
-      <CtaBanner title="Ready to Start Your Project?" subtitle="Our journal gives you the knowledge  -  we give you the craftsmanship." />
     </>
   )
 }

@@ -29,7 +29,7 @@ export default function HeroSimple({
   return (
     <section
       className={`relative pt-36 pb-16 md:pt-44 md:pb-20 ${
-        imageSrc ? '' : dark ? 'bg-charcoal' : 'bg-cream'
+        imageSrc ? '' : dark ? 'bg-dark-base' : 'bg-charcoal'
       }`}
     >
       {imageSrc && (
@@ -42,7 +42,7 @@ export default function HeroSimple({
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-charcoal/55" />
+          <div className="absolute inset-0 bg-charcoal/70" />
         </>
       )}
       <div className="relative container-editorial">
@@ -53,25 +53,25 @@ export default function HeroSimple({
               <li>
                 <Link
                   href="/"
-                  className={`${dark || imageSrc ? 'text-cream/40 hover:text-gold' : 'text-stone-400 hover:text-gold'} transition-colors duration-150`}
+                  className={`${dark || imageSrc ? 'text-cream/60 hover:text-gold' : 'text-cream/60 hover:text-gold'} transition-colors duration-150`}
                 >
                   Home
                 </Link>
               </li>
               {breadcrumbs.map((crumb, i) => (
                 <li key={i} className="flex items-center gap-2">
-                  <span className={dark || imageSrc ? 'text-cream/20' : 'text-stone-300'}>·</span>
+                  <span className={dark || imageSrc ? 'text-cream/20' : 'text-cream/20'}>·</span>
                   {crumb.href && i < breadcrumbs.length - 1 ? (
                     <Link
                       href={crumb.href}
-                      className={`${dark || imageSrc ? 'text-cream/40 hover:text-gold' : 'text-stone-400 hover:text-gold'} transition-colors duration-150`}
+                      className={`${dark || imageSrc ? 'text-cream/60 hover:text-gold' : 'text-cream/60 hover:text-gold'} transition-colors duration-150`}
                     >
                       {crumb.label}
                     </Link>
                   ) : (
                     <span
                       aria-current="page"
-                      className={dark || imageSrc ? 'text-cream/60' : 'text-stone-600'}
+                      className={dark || imageSrc ? 'text-cream/80' : 'text-cream/80'}
                     >
                       {crumb.label}
                     </span>
@@ -99,7 +99,7 @@ export default function HeroSimple({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             className={`font-serif font-light text-h1 md:text-display leading-[1.05] mb-5 text-balance ${
-              dark || imageSrc ? 'text-cream' : 'text-stone-900'
+              dark || imageSrc ? 'text-cream' : 'text-cream'
             }`}
           >
             {title}
@@ -111,7 +111,7 @@ export default function HeroSimple({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className={`font-sans text-lg font-light leading-relaxed ${
-                dark || imageSrc ? 'text-cream/65' : 'text-stone-600'
+                dark || imageSrc ? 'text-cream/90' : 'text-cream/80'
               }`}
             >
               {subtitle}
@@ -119,7 +119,7 @@ export default function HeroSimple({
           )}
         </div>
 
-        <div className={`mt-10 h-px ${dark || imageSrc ? 'bg-gold/20' : 'bg-stone-200'}`} />
+        <div className={`mt-10 h-px ${dark || imageSrc ? 'bg-gold/20' : 'bg-gold/20'}`} />
       </div>
     </section>
   )

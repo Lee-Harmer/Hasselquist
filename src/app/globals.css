@@ -9,6 +9,7 @@
   --color-gold-dark: #A8873A;
   --color-cream: #F0EBE0;
   --color-cream-dark: #E5DDD0;
+  --color-dark-base: #0F1115;
   --color-stone-50: #FAFAF8;
   --color-stone-200: #EDE8E0;
   --color-stone-600: #6E665C;
@@ -16,7 +17,7 @@
   --color-stone-900: #1A1714;
 }
 
-/* Skip navigation link — visible on focus, hidden otherwise */
+/* Skip navigation link - visible on focus, hidden otherwise */
 .skip-nav {
   position: absolute;
   top: -100%;
@@ -25,7 +26,7 @@
   padding: 0.75rem 1.5rem;
   background: #1C2027;
   color: #C9A84C;
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
@@ -46,16 +47,17 @@
   }
 
   body {
-    background-color: var(--color-stone-50);
-    color: var(--color-stone-800);
-    font-family: var(--font-inter), system-ui, sans-serif;
+    background-color: #0F1115;
+    color: var(--color-cream);
+    font-family: var(--font-body), system-ui, sans-serif;
     line-height: 1.75;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-cormorant), Georgia, serif;
-    color: var(--color-stone-900);
+    font-family: var(--font-display), Georgia, serif;
+    color: var(--color-cream);
     line-height: 1.1;
+    font-optical-sizing: auto;
   }
 
   /* All links and buttons transition smoothly */
@@ -74,7 +76,7 @@
   /* Selection */
   ::selection {
     background-color: #C9A84C28;
-    color: var(--color-stone-900);
+    color: var(--color-cream);
   }
 
 }
@@ -125,7 +127,7 @@
   }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-2 text-stone-700 hover:text-gold font-sans text-[0.75rem] uppercase tracking-[0.12em] border-b border-stone-300 hover:border-gold pb-0.5 transition-all duration-300;
+    @apply inline-flex items-center gap-2 text-cream/70 hover:text-gold font-sans text-[0.75rem] uppercase tracking-[0.12em] border-b border-cream/20 hover:border-gold pb-0.5 transition-all duration-300;
   }
 }
 

@@ -5,6 +5,7 @@ import CtaBanner from '@/components/sections/CtaBanner'
 import FadeIn from '@/components/motion/FadeIn'
 import StaggerChildren, { StaggerItem } from '@/components/motion/StaggerChildren'
 import SectionLabel from '@/components/ui/SectionLabel'
+import QuirkyComment from '@/components/ui/QuirkyComment'
 import { handymanServices } from '@/lib/services'
 
 export const metadata: Metadata = {
@@ -24,12 +25,12 @@ export default function ServicesPage() {
         breadcrumbs={[{ label: 'Services' }]}
       />
 
-      <section className="section-padding bg-stone-50">
+      <section className="section-padding bg-dark-base">
         <div className="container-editorial">
           <FadeIn>
             <div className="max-w-2xl mb-14">
               <SectionLabel className="mb-4">Our Services</SectionLabel>
-              <p className="font-sans text-[1rem] text-stone-600 leading-relaxed">
+              <p className="font-sans text-[1rem] text-cream/60 leading-relaxed">
                 From carpentry and plumbing to flooring and electrical, we bring professional-grade skill to every project  -  no matter the size. Every job is handled with the same care and attention to detail.
               </p>
             </div>
@@ -42,6 +43,18 @@ export default function ServicesPage() {
               </StaggerItem>
             ))}
           </StaggerChildren>
+
+          <FadeIn>
+            <div className="mt-10">
+              <QuirkyComment
+                text="One thing fixed and suddenly you'll see ten more. Fair warning."
+                arrow="up-right"
+                rotate={-2}
+                dark
+                className="max-w-xs"
+              />
+            </div>
+          </FadeIn>
         </div>
       </section>
 

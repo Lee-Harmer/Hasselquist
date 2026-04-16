@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        'dark-base': '#0F1115',
         charcoal: '#1C2027',
         gold: {
           DEFAULT: '#C9A84C',
@@ -33,8 +34,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-display)', 'Georgia', 'serif'],
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        handwriting: ['var(--font-caveat)', 'cursive'],
       },
       fontSize: {
         'display': ['5rem', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
@@ -88,11 +90,11 @@ const config: Config = {
             '--tw-prose-quotes': '#1A1714',
             '--tw-prose-quote-borders': '#C9A84C',
             '--tw-prose-captions': '#6E665C',
-            fontFamily: 'var(--font-inter), system-ui, sans-serif',
-            h1: { fontFamily: 'var(--font-cormorant), Georgia, serif', fontWeight: '400' },
-            h2: { fontFamily: 'var(--font-cormorant), Georgia, serif', fontWeight: '400' },
-            h3: { fontFamily: 'var(--font-cormorant), Georgia, serif', fontWeight: '500' },
-            h4: { fontFamily: 'var(--font-cormorant), Georgia, serif', fontWeight: '500' },
+            fontFamily: 'var(--font-body), system-ui, sans-serif',
+            h1: { fontFamily: 'var(--font-display), Georgia, serif', fontWeight: '400' },
+            h2: { fontFamily: 'var(--font-display), Georgia, serif', fontWeight: '400' },
+            h3: { fontFamily: 'var(--font-display), Georgia, serif', fontWeight: '500' },
+            h4: { fontFamily: 'var(--font-display), Georgia, serif', fontWeight: '500' },
             a: {
               color: '#C9A84C',
               textDecoration: 'none',

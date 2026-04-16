@@ -235,7 +235,7 @@ export const cities: City[] = [
     distanceMiles: 28,
     population: '4,000',
     description:
-      'Wayzata sits on the shores of Lake Minnetonka and is home to some of the most prestigious real estate in Minnesota. Homeowners here expect exceptional craftsmanship and an elevated approach to every project — exactly what Hasselquist Contracting delivers.',
+      'Wayzata sits on the shores of Lake Minnetonka and is home to some of the most prestigious real estate in Minnesota. Homeowners here expect exceptional craftsmanship and an elevated approach to every project, exactly what Hasselquist Contracting delivers.',
   },
   {
     name: 'Excelsior',

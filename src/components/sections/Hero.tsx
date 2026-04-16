@@ -79,7 +79,7 @@ export default function Hero({
           <Image src={imageSrc} alt="" fill priority fetchPriority="high" sizes="100vw" className="object-cover object-center" />
         )}
 
-        {/* Minimal overlay — bottom fade only for text legibility */}
+        {/* Minimal overlay - bottom fade only for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-charcoal/10 to-transparent" />
       </div>
 

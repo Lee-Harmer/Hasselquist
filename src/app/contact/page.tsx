@@ -3,6 +3,7 @@ import HeroSimple from '@/components/sections/HeroSimple'
 import ContactForm from '@/components/sections/ContactForm'
 import FadeIn from '@/components/motion/FadeIn'
 import SectionLabel from '@/components/ui/SectionLabel'
+import QuirkyComment from '@/components/ui/QuirkyComment'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Free Quote Shakopee MN',
@@ -19,9 +20,10 @@ export default function ContactPage() {
         title="Let's Talk About Your Project"
         subtitle="We'd love to hear about what you have in mind. Fill out the form and we'll be in touch within one business day."
         breadcrumbs={[{ label: 'Contact' }]}
+        imageSrc="/images/contact.webp"
       />
 
-      <section className="section-padding bg-stone-50">
+      <section className="section-padding bg-dark-base">
         <div className="container-editorial">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             {/* Contact Info */}
@@ -63,25 +65,25 @@ export default function ContactPage() {
                   },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-4">
-                    <div className="w-10 h-10 flex-shrink-0 bg-cream border border-stone-200 flex items-center justify-center text-gold">
+                    <div className="w-10 h-10 flex-shrink-0 bg-charcoal border border-cream/10 flex items-center justify-center text-gold">
                       {item.icon}
                     </div>
                     <div>
-                      <p className="label-style text-stone-400 mb-1">{item.label}</p>
+                      <p className="label-style text-cream/35 mb-1">{item.label}</p>
                       {item.href ? (
-                        <a href={item.href} className="font-sans text-[0.95rem] text-stone-800 hover:text-gold transition-colors duration-150">
+                        <a href={item.href} className="font-sans text-[0.95rem] text-cream/90 hover:text-gold transition-colors duration-150">
                           {item.value}
                         </a>
                       ) : (
-                        <p className="font-sans text-[0.95rem] text-stone-800 whitespace-pre-line">{item.value}</p>
+                        <p className="font-sans text-[0.95rem] text-cream/90 whitespace-pre-line">{item.value}</p>
                       )}
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="bg-cream border border-stone-200 p-6">
-                <h3 className="font-serif font-medium text-h4 text-stone-900 mb-3">Business Hours</h3>
+              <div className="bg-charcoal border border-cream/10 p-6">
+                <h3 className="font-serif font-medium text-h4 text-cream mb-3">Business Hours</h3>
                 <div className="space-y-2">
                   {[
                     { day: 'Monday  -  Friday', hours: '7:00 AM – 6:00 PM' },
@@ -89,8 +91,8 @@ export default function ContactPage() {
                     { day: 'Sunday', hours: 'By appointment' },
                   ].map((row) => (
                     <div key={row.day} className="flex justify-between font-sans text-[0.83rem]">
-                      <span className="text-stone-500">{row.day}</span>
-                      <span className="text-stone-800 font-medium">{row.hours}</span>
+                      <span className="text-cream/50">{row.day}</span>
+                      <span className="text-cream/90 font-medium">{row.hours}</span>
                     </div>
                   ))}
                 </div>
@@ -106,26 +108,21 @@ export default function ContactPage() {
 
             {/* Form */}
             <FadeIn direction="left" delay={0.15}>
+              <div className="mb-8">
+                <QuirkyComment
+                  text="Write it all down - the vision, the budget, the 'oh and also...' list."
+                  arrow="down-right"
+                  rotate={-2}
+                  dark
+                  className="max-w-xs"
+                />
+              </div>
               <ContactForm />
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Map */}
-      <section className="h-80 md:h-96 relative">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.4!2d-93.5272!3d44.7974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDQ3JzUwLjYiTiA5M8KwMzEnMzguMiJX!5e0!3m2!1sen!2sus!4v1700000000000"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Hasselquist Contracting location in Shakopee, MN"
-          className="absolute inset-0"
-        />
-      </section>
     </>
   )
 }

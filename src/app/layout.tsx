@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
-import { cormorant, inter } from '@/styles/fonts'
+import { bodoni, figtree, caveat } from '@/styles/fonts'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import PageTransition from '@/components/motion/PageTransition'
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
     url: 'https://hasselquistcontracting.com',
-    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Hasselquist Contracting — Home Remodeling & Handyman Services Shakopee MN' }],
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Hasselquist Contracting: Home Remodeling & Handyman Services Shakopee MN' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -94,7 +94,7 @@ const localBusinessSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="en" className={`${bodoni.variable} ${figtree.variable} ${caveat.variable}`}>
       <head>
         <script
           type="application/ld+json"
