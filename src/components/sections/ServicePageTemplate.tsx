@@ -96,6 +96,49 @@ export default function ServicePageTemplate({
         </div>
       </section>
 
+      {/* Pricing */}
+      {service.pricing && service.pricing.length > 0 && (
+        <section className="section-padding bg-white">
+          <div className="container-editorial">
+            <FadeIn>
+              <SectionLabel className="mb-4">Pricing</SectionLabel>
+              <h2 className="font-serif font-light text-h3 text-stone-900 mb-3">
+                Estimated Pricing
+              </h2>
+              <p className="font-sans text-[0.82rem] text-stone-500 mb-10 max-w-2xl">
+                These are estimated prices per job and may not include additional costs for materials or specific job requirements.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <div className="border border-stone-200 divide-y divide-stone-200">
+                {service.pricing.map((item) => (
+                  <div key={item.name} className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 p-5 sm:p-6 group hover:bg-stone-50 transition-colors duration-150">
+                    <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                      <svg className="w-4 h-4 text-gold" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="2,8 6,12 14,4" />
+                      </svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-serif font-medium text-[1rem] text-stone-900">{item.name}</p>
+                      <p className="font-sans text-[0.8rem] text-stone-500 mt-0.5 leading-relaxed">{item.description}</p>
+                    </div>
+                    <div className="flex items-center gap-5 sm:gap-6 flex-shrink-0">
+                      <p className="font-serif font-medium text-stone-900 text-right whitespace-nowrap">{item.price}</p>
+                      <Link
+                        href="/contact"
+                        className="font-sans text-[0.72rem] uppercase tracking-wider text-charcoal border border-stone-300 hover:border-gold hover:text-gold px-4 py-2 transition-colors duration-200 whitespace-nowrap"
+                      >
+                        Book Now
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
       {/* Why Choose Us Strip */}
       <section className="py-14 bg-cream border-y border-stone-200">
         <div className="container-editorial">

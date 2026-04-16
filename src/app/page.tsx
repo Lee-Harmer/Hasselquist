@@ -107,7 +107,7 @@ export default function HomePage() {
           </FadeIn>
 
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {handymanServices.map((service) => (
+            {handymanServices.filter((s) => s.slug !== 'other').map((service) => (
               <StaggerItem key={service.slug}>
                 <ServiceCard service={service} baseHref="/services" variant="light" />
               </StaggerItem>

@@ -1,3 +1,9 @@
+export interface PricingItem {
+  name: string
+  description: string
+  price: string
+}
+
 export interface Service {
   slug: string
   title: string
@@ -8,6 +14,7 @@ export interface Service {
   image: string
   icon: string
   highlights: string[]
+  pricing?: PricingItem[]
   metaTitle: string
   metaDescription: string
   hook?: string
@@ -38,6 +45,13 @@ export const services: Service[] = [
       'Stair railing & baluster work',
       'Window casing & sill replacement',
     ],
+    pricing: [
+      { name: 'Door Repair/Replacement', description: 'Ensure your doors are secure and stylish with expert repairs or new installations.', price: '$100–$300 per door' },
+      { name: 'Window Repair/Replacement', description: 'Improve energy efficiency and enhance your home\'s look with professional window repairs or replacements.', price: '$150–$500 per window' },
+      { name: 'Cabinet Installation', description: 'Transform your kitchen or bathroom with beautiful, custom cabinet installations.', price: '$200–$500 per cabinet' },
+      { name: 'Trim & Molding Installation', description: 'Add sophistication to any room with expertly installed trim and molding.', price: '$50–$100 per linear foot' },
+      { name: 'Baseboard Installation', description: 'Give your walls a clean, finished look with precise baseboard installations.', price: '$2–$5 per linear foot' },
+    ],
     metaTitle: 'Carpentry Services Shakopee MN | Custom Trim & Built-Ins',
     metaDescription:
       'Expert carpentry services in Shakopee, MN. Crown molding, built-ins, door installation, trim work, and custom woodworking throughout the Twin Cities.',
@@ -64,6 +78,12 @@ export const services: Service[] = [
       'Garbage disposal installation',
       'Shut-off valve replacement',
       'Bathroom & kitchen plumbing rough-in',
+    ],
+    pricing: [
+      { name: 'Faucet Repair/Replacement', description: 'Fix or upgrade your faucet for improved efficiency and style.', price: '$75–$150' },
+      { name: 'Leak Detection', description: 'Quickly find and repair hidden leaks to prevent costly water damage.', price: '$50–$100' },
+      { name: 'Toilet Repair', description: 'Restore your toilet\'s function with fast and reliable repairs or replacements.', price: '$75–$150' },
+      { name: 'Garbage Disposal Repair', description: 'Get your kitchen back on track with expert garbage disposal repairs or new installations.', price: '$100–$200' },
     ],
     metaTitle: 'Plumbing Services Shakopee MN | Fixture Installation & Repairs',
     metaDescription:
@@ -93,6 +113,12 @@ export const services: Service[] = [
       'Circuit breaker replacement',
       'Pre-remodel electrical rough-in',
     ],
+    pricing: [
+      { name: 'Light Fixture Installation', description: 'Upgrade your lighting with expertly installed fixtures for a brighter, more efficient home.', price: '$50–$150 per fixture' },
+      { name: 'Outlet Repair/Replacement', description: 'Fix faulty outlets or upgrade to new ones for a safer, more reliable electrical system.', price: '$50–$100 per outlet' },
+      { name: 'Switch Repair', description: 'Quick and reliable repairs for malfunctioning light switches, restoring control and safety.', price: '$50–$100 per switch' },
+      { name: 'Small Appliance Repair', description: 'Get your small appliances back in working order with professional electrical repairs.', price: '$50–$150 per appliance' },
+    ],
     metaTitle: 'Electrical Services Shakopee MN | Outlets, Fixtures & More',
     metaDescription:
       'Licensed electrical services in Shakopee, MN. Outlet installation, light fixtures, ceiling fans, GFCI outlets, and electrical upgrades. Twin Cities area.',
@@ -119,6 +145,11 @@ export const services: Service[] = [
       'Texture matching',
       'Water damage repair',
       'Popcorn ceiling removal',
+    ],
+    pricing: [
+      { name: 'Repair', description: 'Quick and reliable drywall repairs to fix holes and damage, restoring a seamless finish.', price: '$50–$150 per hole' },
+      { name: 'Patching', description: 'Professional patching services for larger wall damage, blending perfectly with existing walls.', price: '$1–$2 per sq ft' },
+      { name: 'Texturing', description: 'Add depth and character to your walls with expertly applied drywall texturing.', price: '$2–$4 per sq ft' },
     ],
     metaTitle: 'Drywall Services Shakopee MN | Patching, Installation & Repair',
     metaDescription:
@@ -148,6 +179,12 @@ export const services: Service[] = [
       'Subfloor repair & leveling',
       'Transition strips & thresholds',
     ],
+    pricing: [
+      { name: 'Laminate Installation', description: 'Durable and stylish laminate flooring, expertly installed to fit your space and budget.', price: '$3–$5 per sq ft' },
+      { name: 'Hardwood Installation', description: 'Bring timeless beauty to your home with professional hardwood flooring installation.', price: '$5–$8 per sq ft' },
+      { name: 'Carpet Installation', description: 'Create a cozy, comfortable atmosphere with expertly installed carpet flooring.', price: '$2–$4 per sq ft' },
+      { name: 'Tile Installation', description: 'Enhance your home\'s style with precision tile installations, perfect for small or high-traffic areas.', price: '$5–$10 per sq ft' },
+    ],
     metaTitle: 'Flooring Installation Shakopee MN | Hardwood, LVP & Tile',
     metaDescription:
       'Expert flooring installation in Shakopee, MN. Hardwood, luxury vinyl plank, tile, and laminate. Serving Shakopee, Burnsville, Eden Prairie, and the Twin Cities.',
@@ -175,6 +212,15 @@ export const services: Service[] = [
       'Fence post repair & replacement',
       'Deck staining & sealing prep',
     ],
+    pricing: [
+      { name: 'Deck Repair', description: 'Restore your deck\'s structure and appearance with expert repair services for long-lasting results.', price: '$500–$2,000' },
+      { name: 'Deck Staining/Sealing', description: 'Protect and beautify your deck with professional staining and sealing that stands up to the elements.', price: '$200–$500' },
+      { name: 'Deck Cleaning', description: 'Keep your deck looking fresh and clean with thorough cleaning services that remove dirt and grime.', price: '$150–$300' },
+      { name: 'Fence Repair', description: 'Repair damaged sections of your fence for enhanced privacy, security, and curb appeal.', price: '$100–$300 per section' },
+      { name: 'Fence Installation', description: 'Professional fence installations tailored to your home\'s style and security needs.', price: '$10–$20 per linear foot' },
+      { name: 'Gutter Cleaning', description: 'Prevent water damage with regular gutter cleaning to ensure proper drainage and protection for your home.', price: '$75–$150' },
+      { name: 'Pressure Washing', description: 'Revitalize your home\'s exterior with professional pressure washing, perfect for driveways, decks, and siding.', price: '$100 per hour' },
+    ],
     metaTitle: 'Deck & Fence Services Shakopee MN | Construction & Repair',
     metaDescription:
       'Professional deck and fence construction and repair in Shakopee, MN. Built for Minnesota\'s climate. Serving the Twin Cities metro area.',
@@ -183,6 +229,39 @@ export const services: Service[] = [
       arrow: 'up-right',
       rotate: 2,
       align: 'right',
+    },
+  },
+  {
+    slug: 'other',
+    title: 'Additional Handyman Services',
+    shortTitle: 'Other Services',
+    category: 'handyman',
+    image: '/images/services/other.png',
+    icon: '🔨',
+    description: 'Versatile handyman services for all your unique needs — garage doors, furniture assembly, small remodels, and debris removal.',
+    longDescription:
+      'We go beyond standard repairs and installations with a variety of additional services to meet your home improvement needs. From garage door repairs to furniture assembly and small remodels, we are your go-to solution for any project that requires skilled workmanship and attention to detail. No project is too big or too small, and we tailor our services to fit your specific requirements.',
+    highlights: [
+      'Garage door spring & track repair',
+      'Furniture assembly',
+      'Small bathroom & kitchen updates',
+      'Cabinet installation & upgrades',
+      'Construction debris removal',
+      'General home improvement tasks',
+    ],
+    pricing: [
+      { name: 'Garage Door Repair', description: 'Ensure the smooth and safe operation of your garage door with expert repair services.', price: '$150–$300 + parts' },
+      { name: 'Furniture Assembly', description: 'Quick and accurate furniture assembly for a hassle-free experience and a stable result.', price: '$50–$100 per item' },
+      { name: 'Small Remodels', description: 'Transform your space with expertly planned and executed small remodel projects.', price: 'Varies by scope' },
+      { name: 'Construction Debris Removal', description: 'Efficiently clear out construction debris to leave your space clean and safe after any project.', price: 'Varies by volume' },
+    ],
+    metaTitle: 'Additional Handyman Services Shakopee MN | Garage Doors, Assembly & More',
+    metaDescription:
+      'Versatile handyman services in Shakopee, MN. Garage door repair, furniture assembly, small remodels, and construction debris removal. Serving the Twin Cities metro area.',
+    quirkyComment: {
+      text: "If you're not sure who to call — call us.",
+      arrow: 'down-right',
+      rotate: -2,
     },
   },
   {

@@ -15,12 +15,13 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-3 mb-5">
               <div className="relative w-36 h-36 flex-shrink-0">
+                <div className="absolute inset-8 rounded-full bg-white/90" />
                 <Image
                   src="/images/logo/logo.webp"
                   alt="Hasselquist Contracting"
                   fill
                   sizes="144px"
-                  className="object-contain"
+                  className="object-contain relative"
                 />
               </div>
               <div>
