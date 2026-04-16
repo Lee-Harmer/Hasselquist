@@ -2,9 +2,14 @@
 // Leave it empty (or unset) when a custom domain is configured — the subdirectory disappears.
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
+// GitHub Pages requires a fully-static export with a custom image loader.
+// Netlify (no basePath) runs as SSR via @netlify/plugin-nextjs — no static export needed,
+// and Next.js image optimisation works normally through Netlify's Image CDN.
+const isGitHubPages = !!basePath
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  ...(isGitHubPages ? { output: 'export' } : {}),
   experimental: {
     optimizePackageImports: ['framer-motion'],
   },
@@ -14,12 +19,9 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   images: {
-    // Use the custom loader (which prepends basePath) only for the GitHub Pages build.
-    // Without a basePath there is nothing to prepend, so unoptimized is simpler and avoids
-    // webpack issues with the loaderFile in dev mode.
-    ...(basePath
+    ...(isGitHubPages
       ? { loader: 'custom', loaderFile: './src/lib/image-loader.ts' }
-      : { unoptimized: true }
+      : {}
     ),
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],

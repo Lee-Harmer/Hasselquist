@@ -44,7 +44,8 @@ export default function SlideshowHero() {
             alt=""
             fill
             priority={current === 0}
-            sizes="100vw"
+            fetchPriority={current === 0 ? 'high' : 'low'}
+            sizes="(max-width: 640px) 640px, (max-width: 1080px) 1080px, 1920px"
             className="object-cover"
           />
         </motion.div>

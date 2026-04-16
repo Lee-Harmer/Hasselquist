@@ -11,6 +11,7 @@ import FadeIn from '@/components/motion/FadeIn'
 import StaggerChildren, { StaggerItem } from '@/components/motion/StaggerChildren'
 import SectionLabel from '@/components/ui/SectionLabel'
 import LazyVideo from '@/components/ui/LazyVideo'
+import MapFacade from '@/components/ui/MapFacade'
 import { handymanServices, remodelingServices } from '@/lib/services'
 
 export const metadata: Metadata = {
@@ -280,16 +281,10 @@ export default function HomePage() {
             {/* Map */}
             <FadeIn direction="left" delay={0.15}>
               <div className="relative">
-                <div className="aspect-[4/3] overflow-hidden border border-stone-200">
-                  <iframe
+                <div className="aspect-[4/3] overflow-hidden border border-stone-200 relative">
+                  <MapFacade
                     title="Hasselquist Contracting location at 6801 Oak Ridge Ct, Shakopee, MN 55379"
                     src="https://www.google.com/maps?q=6801+Oak+Ridge+Ct,+Shakopee,+MN+55379&output=embed&z=13"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
                     className="w-full h-full grayscale hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
@@ -376,8 +371,8 @@ export default function HomePage() {
               </div>
             </FadeIn>
 
-            {/* Right: Erik videos */}
-            <FadeIn direction="left" delay={0.15}>
+            {/* Right: Erik videos — hidden on mobile to avoid loading ~80 MB of video */}
+            <FadeIn direction="left" delay={0.15} className="hidden lg:block">
               <div className="grid grid-cols-2 gap-3">
                 {['/videos/1.mp4', '/videos/2.mp4'].map((src) => (
                   <div key={src} className="aspect-[9/16] overflow-hidden bg-stone-200 relative">
