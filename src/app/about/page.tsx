@@ -27,7 +27,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
             {/* Copy */}
-            <FadeIn direction="right">
+            <FadeIn direction="right" className="order-2 lg:order-1">
               <div className="space-y-6 font-sans text-[1rem] text-cream/60 leading-relaxed">
                 <p>
                   Hasselquist Contracting began with simple handyman jobs  -  helping neighbours, friends, and local homeowners with the kinds of repairs most companies overlook. Small drywall patches. Minor fixes. The kind of work that builds trust one home at a time.
@@ -67,7 +67,7 @@ export default function AboutPage() {
             </FadeIn>
 
             {/* Images */}
-            <FadeIn direction="left" delay={0.15}>
+            <FadeIn direction="left" delay={0.15} className="order-1 lg:order-2">
               <div className="relative lg:sticky lg:top-32 space-y-6">
                 {/* Erik portrait */}
                 <div className="relative">

@@ -27,7 +27,7 @@ export default function ContactPage() {
         <div className="container-editorial">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             {/* Contact Info */}
-            <FadeIn direction="right">
+            <FadeIn direction="right" className="order-2 lg:order-1">
               <SectionLabel className="mb-6">Contact Information</SectionLabel>
 
               <div className="space-y-8 mb-12">
@@ -107,7 +107,7 @@ export default function ContactPage() {
             </FadeIn>
 
             {/* Form */}
-            <FadeIn direction="left" delay={0.15}>
+            <FadeIn direction="left" delay={0.15} className="order-1 lg:order-2">
               <div className="mb-8">
                 <QuirkyComment
                   text="Write it all down - the vision, the budget, the 'oh and also...' list."

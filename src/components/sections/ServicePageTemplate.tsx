@@ -41,7 +41,7 @@ export default function ServicePageTemplate({
         <div className="container-editorial">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
             {/* Left: Content */}
-            <FadeIn direction="right">
+            <FadeIn direction="right" className="order-2 lg:order-1">
               <SectionLabel className="mb-5">Overview</SectionLabel>
               <h2 className="font-serif font-light text-h2 text-stone-900 mb-6">
                 Expert {service.shortTitle} in Shakopee & the Twin Cities
@@ -78,7 +78,7 @@ export default function ServicePageTemplate({
             </FadeIn>
 
             {/* Right: Image */}
-            <FadeIn direction="left" delay={0.15}>
+            <FadeIn direction="left" delay={0.15} className="order-1 lg:order-2">
               <div className="relative">
                 <div className="aspect-[3/4] relative overflow-hidden bg-cream-dark">
                   <Image

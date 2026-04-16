@@ -27,7 +27,7 @@ export default function SlideshowHero() {
   }, [])
 
   return (
-    <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
+    <section className="relative w-full h-screen max-h-[560px] md:max-h-none min-h-[480px] overflow-hidden">
 
       {/* Slideshow */}
       <AnimatePresence mode="sync">
@@ -107,7 +107,7 @@ export default function SlideshowHero() {
       </div>
 
       {/* Progress dots */}
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-14 md:bottom-20 left-1/2 -translate-x-1/2 flex gap-2">
         {images.map((_, i) => (
           <button
             key={i}

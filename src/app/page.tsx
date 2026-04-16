@@ -136,7 +136,7 @@ export default function HomePage() {
       <section className="section-padding bg-cream">
         <div className="container-editorial">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <FadeIn direction="right">
+            <FadeIn direction="right" className="order-2 lg:order-1">
               <SectionLabel className="mb-5">Why Hasselquist</SectionLabel>
               <h2 className="font-serif font-light text-h2 md:text-h1 text-stone-900 leading-[1.08] mb-6 text-balance">
                 Built on Trust.<br />
@@ -214,7 +214,7 @@ export default function HomePage() {
               </div>
             </FadeIn>
 
-            <FadeIn direction="left" delay={0.15}>
+            <FadeIn direction="left" delay={0.15} className="order-1 lg:order-2">
               <div className="relative">
                 <div className="aspect-[4/5] relative overflow-hidden bg-cream-dark">
                   <Image
