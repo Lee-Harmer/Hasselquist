@@ -130,7 +130,7 @@ export default function Header() {
         <div className="container-editorial flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3" aria-label="Hasselquist Contracting  -  Home" onClick={closeAll}>
+          <Link href="/" className="flex items-center gap-3" aria-label="Hasselquist Contracting Home" onClick={closeAll}>
             <div className="relative w-20 h-20 flex-shrink-0 -my-2">
               <Image
                 src="/images/logo/logo.webp"
@@ -355,7 +355,7 @@ export default function Header() {
             <a href="tel:+16122576073" className="block font-sans text-[0.9rem] text-gold hover:text-gold-light transition-colors duration-150">
               612-257-6073
             </a>
-            <p className="font-sans text-[0.75rem] text-cream/40 mt-1">Shakopee, MN  -  Lic. BC808643</p>
+            <p className="font-sans text-[0.75rem] text-cream/40 mt-1">Shakopee, MN · Lic. BC808643</p>
           </div>
         </div>
       </div>

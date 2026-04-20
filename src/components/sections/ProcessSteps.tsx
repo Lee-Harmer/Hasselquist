@@ -20,11 +20,11 @@ const defaultSteps: Step[] = [
     number: '01',
     title: 'Tell Us What You\'re Thinking',
     description:
-      'Call, email, or fill out the form — no commitment, no pressure. We respond within a few hours, not days. Even a rough idea is enough to start.',
+      'Call, email, or fill out the form. No commitment, no pressure. We respond within a few hours, not days. Even a rough idea is enough to start.',
   },
   {
     number: '02',
-    title: 'We Come to You — Free',
+    title: 'We Come to You, Free',
     description:
       'Erik walks through your space in person, listens to your vision, and gives you a clear written quote. No vague estimates, no hidden surprises later. Usually within the same week.',
   },
@@ -32,13 +32,13 @@ const defaultSteps: Step[] = [
     number: '03',
     title: 'Clean Work. Regular Updates.',
     description:
-      'We treat your home like it\'s ours — protected floors, contained dust, tools put away each day. You hear from us regularly so there are no anxious "what\'s happening?" moments.',
+      'We treat your home like it\'s ours: protected floors, contained dust, tools put away each day. You hear from us regularly so there are no anxious "what\'s happening?" moments.',
   },
   {
     number: '04',
     title: 'Done Means Done',
     description:
-      'We walk through every detail together before we call it finished. Punch list items get handled — not forgotten. You shouldn\'t have to chase a contractor after they\'ve been paid.',
+      'We walk through every detail together before we call it finished. Punch list items get handled, not forgotten. You shouldn\'t have to chase a contractor after they\'ve been paid.',
   },
 ]
 

@@ -28,8 +28,8 @@ export default function HeroSimple({
 }: HeroSimpleProps) {
   return (
     <section
-      className={`relative pt-36 pb-16 md:pt-44 md:pb-20 ${
-        imageSrc ? '' : dark ? 'bg-dark-base' : 'bg-charcoal'
+      className={`relative pt-36 pb-16 md:pt-44 md:pb-20 overflow-hidden ${
+        imageSrc ? 'min-h-[320px]' : dark ? 'bg-dark-base' : 'bg-charcoal'
       }`}
     >
       {imageSrc && (

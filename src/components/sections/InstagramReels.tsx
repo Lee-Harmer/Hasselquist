@@ -56,23 +56,25 @@ export default function InstagramReels() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-items-center">
           {reels.map((url) => (
-            <div key={url} className="w-full max-w-[340px]">
-              <blockquote
-                className="instagram-media"
-                data-instgrm-permalink={url}
-                data-instgrm-version="14"
-                style={{
-                  background: '#FFF',
-                  border: 0,
-                  borderRadius: 0,
-                  boxShadow: 'none',
-                  margin: '0 auto',
-                  maxWidth: '340px',
-                  minWidth: '280px',
-                  padding: 0,
-                  width: '100%',
-                }}
-              />
+            <div key={url} className="w-full max-w-[340px] overflow-hidden relative" style={{ height: '590px' }}>
+              <div style={{ transform: 'translateY(-68px)' }}>
+                <blockquote
+                  className="instagram-media"
+                  data-instgrm-permalink={url}
+                  data-instgrm-version="14"
+                  style={{
+                    background: '#FFF',
+                    border: 0,
+                    borderRadius: 0,
+                    boxShadow: 'none',
+                    margin: '0 auto',
+                    maxWidth: '340px',
+                    minWidth: '280px',
+                    padding: 0,
+                    width: '100%',
+                  }}
+                />
+              </div>
             </div>
           ))}
         </div>

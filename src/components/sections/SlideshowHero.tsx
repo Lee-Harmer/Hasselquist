@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -18,9 +18,12 @@ const SLIDE_DURATION = 5500
 
 export default function SlideshowHero() {
   const [current, setCurrent] = useState(0)
+  // Track whether the first slide has already faded in so subsequent slides animate normally.
+  const hasSlideChanged = useRef(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
+      hasSlideChanged.current = true
       setCurrent((prev) => (prev + 1) % images.length)
     }, SLIDE_DURATION)
     return () => clearInterval(timer)
@@ -33,10 +36,10 @@ export default function SlideshowHero() {
       <AnimatePresence mode="sync">
         <motion.div
           key={current}
-          initial={{ opacity: 0, scale: 1.06 }}
+          initial={{ opacity: hasSlideChanged.current ? 0 : 1, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1.02 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.4, ease: 'easeInOut' }}
+          transition={{ duration: 0.9, ease: 'easeInOut' }}
           className="absolute inset-0"
         >
           <Image
@@ -44,8 +47,8 @@ export default function SlideshowHero() {
             alt=""
             fill
             priority={current === 0}
-            fetchPriority={current === 0 ? 'high' : 'low'}
             sizes="(max-width: 640px) 640px, (max-width: 1080px) 1080px, 1920px"
+            quality={80}
             className="object-cover"
           />
         </motion.div>
@@ -59,18 +62,18 @@ export default function SlideshowHero() {
       <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
 
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="font-sans text-[0.65rem] uppercase tracking-[0.28em] text-gold mb-5"
         >
           Licensed Contractor · Shakopee, MN · Twin Cities
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.65, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ delay: 0.2, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="font-serif font-light text-cream text-[2.6rem] sm:text-[3.4rem] md:text-[4.4rem] leading-[1.06] max-w-3xl mb-5 [text-shadow:0_2px_20px_rgba(0,0,0,0.4)]"
         >
           Built for the life<br />
@@ -78,18 +81,18 @@ export default function SlideshowHero() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.95, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ delay: 0.35, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="font-sans text-cream/90 text-[1rem] max-w-lg mb-10 [text-shadow:0_1px_12px_rgba(0,0,0,0.5)]"
         >
           From kitchens to basements, we build the spaces you&apos;ve always imagined - with craftsmanship you can see and quality you can feel.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col sm:flex-row items-center gap-4"
         >
           <Link
@@ -128,7 +131,7 @@ export default function SlideshowHero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2"
       >
         <span className="font-sans text-[0.6rem] uppercase tracking-[0.2em] text-cream/50">Scroll</span>
         <motion.div

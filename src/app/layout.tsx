@@ -96,12 +96,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${bodoni.variable} ${figtree.variable} ${caveat.variable}`}>
       <head>
+        {/* Preconnect to third-party origins used on this site */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.instagram.com" />
+        <link rel="dns-prefetch" href="https://www.instagram.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className="font-sans antialiased bg-stone-50 text-stone-800">
+      <body className="font-sans antialiased bg-dark-base text-stone-800">
         <a
           href="#main-content"
           className="skip-nav"

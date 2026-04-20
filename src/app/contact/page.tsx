@@ -86,7 +86,7 @@ export default function ContactPage() {
                 <h3 className="font-serif font-medium text-h4 text-cream mb-3">Business Hours</h3>
                 <div className="space-y-2">
                   {[
-                    { day: 'Monday  -  Friday', hours: '7:00 AM – 6:00 PM' },
+                    { day: 'Monday to Friday', hours: '7:00 AM to 6:00 PM' },
                     { day: 'Saturday', hours: '8:00 AM – 4:00 PM' },
                     { day: 'Sunday', hours: 'By appointment' },
                   ].map((row) => (

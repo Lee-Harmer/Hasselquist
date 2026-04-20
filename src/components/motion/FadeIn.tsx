@@ -15,10 +15,10 @@ interface FadeInProps {
 export default function FadeIn({
   children,
   delay = 0,
-  duration = 0.8,
+  duration = 0.6,
   className = '',
   direction = 'up',
-  distance = 30,
+  distance = 20,
 }: FadeInProps) {
   const reduced = useReducedMotion()
 

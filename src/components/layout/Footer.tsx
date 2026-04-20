@@ -9,6 +9,7 @@ export default function Footer() {
         alt=""
         fill
         sizes="100vw"
+        quality={55}
         className="object-cover object-center"
         aria-hidden="true"
       />

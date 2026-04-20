@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import HeroSimple from '@/components/sections/HeroSimple'
-import InstagramReels from '@/components/sections/InstagramReels'
 import FadeIn from '@/components/motion/FadeIn'
+
+const InstagramReels = dynamic(() => import('@/components/sections/InstagramReels'), { ssr: false })
 
 export const metadata: Metadata = {
   title: 'About Us | Hasselquist Contracting Shakopee MN',
@@ -30,7 +32,7 @@ export default function AboutPage() {
             <FadeIn direction="right" className="order-2 lg:order-1">
               <div className="space-y-6 font-sans text-[1rem] text-cream/60 leading-relaxed">
                 <p>
-                  Hasselquist Contracting began with simple handyman jobs  -  helping neighbours, friends, and local homeowners with the kinds of repairs most companies overlook. Small drywall patches. Minor fixes. The kind of work that builds trust one home at a time.
+                  Hasselquist Contracting began with simple handyman jobs, helping neighbours, friends, and local homeowners with the kinds of repairs most companies overlook. Small drywall patches. Minor fixes. The kind of work that builds trust one home at a time.
                 </p>
                 <p>
                   From those early days, word spread. Not because of marketing, but because people felt taken care of.
@@ -39,13 +41,13 @@ export default function AboutPage() {
                   Today, that same foundation has grown into something much bigger.
                 </p>
                 <p>
-                  We now design and build spaces that families truly live in. Kitchens where people gather for holidays. Basements transformed into entertainment spaces  -  from movie rooms to golf simulators. Homes that don&apos;t just look better, but feel better to live in.
+                  We now design and build spaces that families truly live in. Kitchens where people gather for holidays. Basements transformed into entertainment spaces, from movie rooms to golf simulators. Homes that don&apos;t just look better, but feel better to live in.
                 </p>
                 <p>
                   But we&apos;ve never left our roots behind.
                 </p>
                 <p>
-                  Handyman work is still a core part of what we do. Not as an afterthought, but as a commitment. Because building a home is one thing. Maintaining it, improving it, and being there for our clients long after the project is done  -  that&apos;s what builds real relationships.
+                  Handyman work is still a core part of what we do. Not as an afterthought, but as a commitment. Because building a home is one thing. Maintaining it, improving it, and being there for our clients long after the project is done. That&apos;s what builds real relationships.
                 </p>
                 <p>
                   We don&apos;t just complete projects and move on. We stay connected. We become the team homeowners call when something needs attention, when ideas evolve, or when it&apos;s time for the next chapter of their home.
@@ -74,7 +76,7 @@ export default function AboutPage() {
                   <div className="aspect-[1/1] relative overflow-hidden bg-charcoal">
                     <Image
                       src="/images/photo-of-erik.webp"
-                      alt="Erik Hasselquist  -  owner of Hasselquist Contracting, Shakopee MN"
+                      alt="Erik Hasselquist, owner of Hasselquist Contracting, Shakopee MN"
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       className="object-cover object-center"
@@ -104,7 +106,7 @@ export default function AboutPage() {
       <section className="py-14 bg-dark-base border-y border-cream/10">
         <div className="container-editorial">
           <FadeIn>
-            <div className="flex flex-wrap items-center justify-center gap-0">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center sm:justify-center gap-6 sm:gap-0">
               {[
                 {
                   label: 'Licensed & Insured',
@@ -145,7 +147,7 @@ export default function AboutPage() {
                 },
               ].map((item, i) => (
                 <div key={item.label} className="flex items-center">
-                  {i > 0 && <div className="w-px h-10 bg-cream/10 mx-8" />}
+                  {i > 0 && <div className="hidden sm:block w-px h-10 bg-cream/10 mx-8" />}
                   <div className="flex items-start gap-3">
                     <div className="mt-0.5">{item.icon}</div>
                     <div>

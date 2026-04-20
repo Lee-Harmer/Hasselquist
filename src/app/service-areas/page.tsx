@@ -21,7 +21,7 @@ export default function ServiceAreasPage() {
         title="Serving the Twin Cities Metro"
         subtitle="Based in Shakopee, we work throughout the Twin Cities and surrounding areas. The cities below are our primary service area, but if you don't see yours, just reach out."
         breadcrumbs={[{ label: 'Service Areas' }]}
-        imageSrc="/images/twin.webp"
+        imageSrc="/images/Twin.webp"
       />
 
       <section className="section-padding bg-stone-50">

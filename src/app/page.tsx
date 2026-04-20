@@ -17,7 +17,7 @@ import { handymanServices, remodelingServices } from '@/lib/services'
 export const metadata: Metadata = {
   title: 'Home Remodeling & Handyman Services Shakopee MN',
   description:
-    'Hasselquist Contracting  -  licensed home remodeling and handyman services in Shakopee, MN. Kitchen remodeling, bathroom renovation, basement finishing, and more. Serving the Twin Cities metro.',
+    'Hasselquist Contracting, licensed home remodeling and handyman services in Shakopee, MN. Kitchen remodeling, bathroom renovation, basement finishing, and more. Serving the Twin Cities metro.',
   alternates: { canonical: '/' },
 }
 
@@ -171,7 +171,7 @@ export default function HomePage() {
                 </a>
               </div>
 
-              <div className="flex items-stretch gap-0 mt-8">
+              <div className="flex flex-col sm:flex-row sm:items-stretch gap-4 sm:gap-0 mt-8">
                 {[
                   {
                     label: 'Licensed & Insured',
@@ -202,7 +202,7 @@ export default function HomePage() {
                   },
                 ].map((item, i) => (
                   <div key={item.label} className="flex items-center">
-                    {i > 0 && <div className="w-px h-10 bg-stone-200 mx-6" />}
+                    {i > 0 && <div className="hidden sm:block w-px h-10 bg-stone-200 mx-6" />}
                     <div className="flex items-start gap-3">
                       <div className="mt-0.5">{item.icon}</div>
                       <div>
@@ -220,7 +220,7 @@ export default function HomePage() {
                 <div className="aspect-[4/5] relative overflow-hidden bg-cream-dark">
                   <Image
                     src="/images/photo-of-erik.webp"
-                    alt="Erik Hasselquist  -  owner of Hasselquist Contracting, Shakopee MN"
+                    alt="Erik Hasselquist, owner of Hasselquist Contracting, Shakopee MN"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover object-top"

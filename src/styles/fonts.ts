@@ -2,7 +2,7 @@ import { Bodoni_Moda, Figtree, Caveat } from 'next/font/google'
 
 export const bodoni = Bodoni_Moda({
   subsets: ['latin'],
-  weight: ['400', '500'],
+  weight: ['400', '500', '600'],
   style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
