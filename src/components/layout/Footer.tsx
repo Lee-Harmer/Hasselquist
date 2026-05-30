@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="relative text-cream bg-charcoal">
       <Image
-        src="/images/footer-bg.png"
+        src="/images/footer-bg.webp"
         alt=""
         fill
         sizes="100vw"

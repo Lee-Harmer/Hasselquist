@@ -14,6 +14,7 @@ export interface BlogFrontmatter {
   readTime: string
   coverImage: string
   featured?: boolean
+  published?: boolean
 }
 
 export interface BlogPost {
@@ -46,6 +47,7 @@ export function getAllPosts(): BlogPost[] {
         content,
       }
     })
+    .filter((p) => p.frontmatter.published !== false)
     .sort(
       (a, b) =>
         new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime(),
@@ -83,8 +85,5 @@ export function getFeaturedPosts(count = 3): BlogPost[] {
 }
 
 export function getAllSlugs(): string[] {
-  if (!fs.existsSync(BLOG_DIR)) return []
-  return fs.readdirSync(BLOG_DIR)
-    .filter((f) => f.endsWith('.mdx'))
-    .map((f) => f.replace(/\.mdx$/, ''))
+  return getAllPosts().map((p) => p.slug)
 }

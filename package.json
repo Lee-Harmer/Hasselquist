@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next-sitemap",
+    "build:static": "NEXT_PUBLIC_STATIC_EXPORT=1 next build && next-sitemap",
     "preview": "npx serve out",
     "lint": "next lint"
   },

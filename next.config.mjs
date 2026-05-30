@@ -5,11 +5,13 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 // GitHub Pages requires a fully-static export with a custom image loader.
 // Netlify (no basePath) runs as SSR via @netlify/plugin-nextjs — no static export needed,
 // and Next.js image optimisation works normally through Netlify's Image CDN.
+// Set NEXT_PUBLIC_STATIC_EXPORT=1 for static hosting (e.g. GoDaddy cPanel).
 const isGitHubPages = !!basePath
+const isStaticExport = isGitHubPages || !!process.env.NEXT_PUBLIC_STATIC_EXPORT
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  ...(isGitHubPages ? { output: 'export' } : {}),
+  ...(isStaticExport ? { output: 'export' } : {}),
   experimental: {
     optimizePackageImports: ['framer-motion'],
   },
@@ -18,8 +20,24 @@ const nextConfig = {
   assetPrefix: basePath || undefined,
   poweredByHeader: false,
   compress: true,
+  async headers() {
+    return [
+      {
+        source: '/images/(.*)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+    ]
+  },
   images: {
-    ...(isGitHubPages
+    ...(isStaticExport
       ? { loader: 'custom', loaderFile: './src/lib/image-loader.ts' }
       : {}
     ),
