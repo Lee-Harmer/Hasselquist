@@ -106,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className="font-sans antialiased bg-dark-base text-stone-800">
+      <body className="font-sans antialiased bg-dark-base text-cream">
         <a
           href="#main-content"
           className="skip-nav"
