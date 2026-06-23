@@ -264,6 +264,16 @@ export const cities: City[] = [
     description:
       'Maple Grove is one of the fastest-growing and most sought-after suburbs in the Twin Cities, with a large stock of newer homes where homeowners are investing in custom upgrades, finished basements, and full remodels to personalize their spaces.',
   },
+  {
+    name: 'Rochester',
+    slug: 'rochester',
+    county: 'Olmsted',
+    distanceMiles: 80,
+    population: '125,000',
+    description:
+      'Rochester is Minnesota\'s second-largest city and home to Mayo Clinic, attracting a highly educated, professional population with high expectations for their homes. From historic neighborhoods near downtown to newer executive builds in the southeast, Rochester homeowners invest seriously in quality remodeling and craftsmanship. Hasselquist Contracting has a crew serving the Rochester area, bringing the same licensed, insured, and detail-oriented approach that Twin Cities homeowners have trusted.',
+    neighborhoods: ['Pill Hill', 'Kutzky Park', 'Folwell', 'Northwest Rochester', 'Southeast Rochester'],
+  },
 ]
 
 export function getCityBySlug(slug: string): City | undefined {

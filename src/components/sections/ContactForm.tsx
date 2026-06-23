@@ -12,6 +12,7 @@ const schema = z.object({
   phone: z.string().min(10, 'Please enter a valid phone number'),
   service: z.string().min(1, 'Please select a service'),
   message: z.string().min(10, 'Please describe your project (min 10 characters)'),
+  budget: z.string().optional(),
   howHeard: z.string().optional(),
   honeypot: z.string().max(0).optional(),
 })
@@ -30,6 +31,16 @@ const services = [
   'Decks & Fences',
   'General Handyman',
   'Other',
+]
+
+const budgetRanges = [
+  'Under $5,000',
+  '$5,000 – $15,000',
+  '$15,000 – $30,000',
+  '$30,000 – $60,000',
+  '$60,000 – $100,000',
+  'Over $100,000',
+  'Not sure yet',
 ]
 
 const howHeardOptions = [
@@ -78,6 +89,7 @@ export default function ContactForm() {
           phone: data.phone,
           service: data.service,
           message: data.message,
+          budget: data.budget || 'Not specified',
           how_heard: data.howHeard || 'Not specified',
           botcheck: data.honeypot, // Web3Forms honeypot field
         }),
@@ -202,6 +214,22 @@ export default function ContactForm() {
           ))}
         </select>
         {errors.service && <p id="service-error" role="alert" className="font-sans text-[0.75rem] text-red-500 mt-1.5">{errors.service.message}</p>}
+      </div>
+
+      <div>
+        <label htmlFor="budget" className="block font-sans text-[0.78rem] uppercase tracking-wider text-cream/50 mb-2">
+          Approximate Budget
+        </label>
+        <select
+          id="budget"
+          {...register('budget')}
+          className="w-full bg-[#232830] border border-cream/10 px-4 py-3 font-sans text-[0.9rem] text-cream focus:outline-none focus:border-gold transition-colors duration-150 appearance-none"
+        >
+          <option value="">Select a range (optional)</option>
+          {budgetRanges.map((b) => (
+            <option key={b} value={b}>{b}</option>
+          ))}
+        </select>
       </div>
 
       <div>

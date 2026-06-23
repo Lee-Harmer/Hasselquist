@@ -7,9 +7,9 @@ import SectionLabel from '@/components/ui/SectionLabel'
 import { cities } from '@/lib/cities'
 
 export const metadata: Metadata = {
-  title: 'Service Areas | Handyman & Remodeling Twin Cities MN',
+  title: 'Service Areas | Handyman & Remodeling Twin Cities & Rochester MN',
   description:
-    'Hasselquist Contracting serves the Twin Cities metro and surrounding areas. Based in Shakopee, MN, we work throughout Scott, Carver, Dakota, and Hennepin counties and beyond.',
+    'Hasselquist Contracting serves the Twin Cities metro and Rochester, MN. Based in Shakopee, we work throughout Scott, Carver, Dakota, and Hennepin counties — and have a crew serving the Rochester area.',
   alternates: { canonical: '/service-areas' },
 }
 
@@ -18,8 +18,8 @@ export default function ServiceAreasPage() {
     <>
       <HeroSimple
         eyebrow="Where We Work"
-        title="Serving the Twin Cities Metro"
-        subtitle="Based in Shakopee, we work throughout the Twin Cities and surrounding areas. The cities below are our primary service area, but if you don't see yours, just reach out."
+        title="Serving the Twin Cities & Rochester"
+        subtitle="Based in Shakopee, we work throughout the Twin Cities metro — and have a dedicated crew serving the Rochester area. The cities below are our primary service area, but if you don't see yours, just reach out."
         breadcrumbs={[{ label: 'Service Areas' }]}
         imageSrc="/images/Twin.webp"
       />
@@ -30,7 +30,7 @@ export default function ServiceAreasPage() {
             <div className="max-w-2xl mb-14">
               <SectionLabel className="mb-4">Our Coverage Area</SectionLabel>
               <p className="font-sans text-[1rem] text-stone-600 leading-relaxed">
-                We regularly work across Scott, Carver, Dakota, and Hennepin counties, from Shakopee and Eden Prairie to Bloomington and beyond. The cities below represent our primary coverage area, but they&apos;re not a hard boundary. If your project sounds like a good fit, we&apos;d love to hear about it regardless of where you are.
+                We regularly work across Scott, Carver, Dakota, and Hennepin counties, from Shakopee and Eden Prairie to Bloomington and beyond. We also have a dedicated crew serving Rochester and the surrounding Olmsted County area. The cities below represent our primary coverage, but they&apos;re not a hard boundary — if your project sounds like a good fit, reach out regardless of where you are.
               </p>
             </div>
           </FadeIn>
