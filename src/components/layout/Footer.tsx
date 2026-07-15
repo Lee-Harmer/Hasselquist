@@ -78,6 +78,7 @@ export default function Footer() {
                 { href: '/service-areas', label: 'Areas Served' },
                 { href: '/blog', label: 'Journal' },
                 { href: '/contact', label: 'Contact' },
+                { href: '/privacy-policy', label: 'Privacy Policy' },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
@@ -159,12 +160,21 @@ export default function Footer() {
           <p className="font-sans text-[0.72rem] text-cream/60">
             © {new Date().getFullYear()} Hasselquist Contracting. All rights reserved. Lic. BC808643.
           </p>
-          <Link
-            href="/privacy-policy"
-            className="font-sans text-[0.72rem] text-cream/60 hover:text-cream transition-colors duration-200"
-          >
-            Privacy Policy
-          </Link>
+          <a
+              href="https://leechify.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 group"
+            >
+              <span className="font-sans text-[0.85rem] text-cream/60 group-hover:text-cream transition-colors duration-200">Site by:</span>
+              <Image
+                src="/images/leechify.png"
+                alt="Leechify"
+                width={120}
+                height={40}
+                className="object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+              />
+            </a>
         </div>
 
       </div>
