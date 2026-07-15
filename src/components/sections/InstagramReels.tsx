@@ -56,7 +56,9 @@ export default function InstagramReels() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-items-center">
           {reels.map((url) => (
-            <div key={url} className="w-full max-w-[340px] overflow-hidden relative" style={{ height: '590px' }}>
+            <div key={url} className="w-full max-w-[340px] overflow-hidden relative" style={{ height: '560px' }}>
+              {/* Covers the likes/comments footer bar */}
+              <div className="absolute bottom-0 left-0 right-0 h-16 bg-white z-10 pointer-events-none" />
               <div style={{ transform: 'translateY(-68px)' }}>
                 <blockquote
                   className="instagram-media"

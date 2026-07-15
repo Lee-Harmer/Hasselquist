@@ -44,6 +44,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   body {
@@ -51,6 +52,7 @@
     color: var(--color-cream);
     font-family: var(--font-body), system-ui, sans-serif;
     line-height: 1.75;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {

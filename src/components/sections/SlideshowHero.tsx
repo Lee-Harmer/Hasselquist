@@ -59,7 +59,7 @@ export default function SlideshowHero() {
       <div className="absolute inset-0 bg-gradient-to-b from-charcoal/30 via-transparent to-charcoal/50" />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center pb-20 sm:pb-0">
 
         <motion.p
           initial={{ opacity: 0, y: 10 }}
