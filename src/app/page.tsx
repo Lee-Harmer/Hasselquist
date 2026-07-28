@@ -247,16 +247,17 @@ export default function HomePage() {
             <FadeIn direction="right">
               <SectionLabel className="mb-4">Where We Work</SectionLabel>
               <h2 className="font-serif font-light text-h2 text-stone-900 mb-4">
-                Serving the Twin Cities Metro
+                Serving the Twin Cities Metro & Rochester
               </h2>
               <p className="font-sans text-[0.9rem] text-stone-500 leading-relaxed mb-8">
-                Based in Shakopee, we work throughout the Twin Cities metro. Don&apos;t see your city listed? Reach out and we&apos;re happy to discuss your project regardless of location.
+                Based in Shakopee, we work throughout the Twin Cities metro and southeast Minnesota, including Rochester. Don&apos;t see your city listed? Reach out and we&apos;re happy to discuss your project regardless of location.
               </p>
               <div className="flex flex-wrap gap-x-4 gap-y-2 mb-8">
                 {[
                   'Shakopee', 'Eden Prairie', 'Chanhassen', 'Prior Lake', 'Savage',
                   'Burnsville', 'Apple Valley', 'Bloomington', 'Edina', 'Minnetonka',
                   'Plymouth', 'Wayzata', 'Excelsior', 'Maple Grove', 'Mendota Heights',
+                  'Rochester',
                 ].map((city) => (
                   <Link
                     key={city}
