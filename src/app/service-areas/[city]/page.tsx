@@ -61,7 +61,9 @@ export default async function CityPage({ params }: PageProps) {
         name: `Does Hasselquist Contracting serve ${city.name}, MN?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Yes! Hasselquist Contracting proudly serves ${city.name} and surrounding areas in ${city.county} County. We're based in Shakopee, just ${city.distanceMiles} miles away, and provide the same high-quality service to all of our service area communities.`,
+          text: city.localNote
+            ? `Yes! Hasselquist Contracting proudly serves ${city.name} and the surrounding ${city.county} County area. ${city.localNote}`
+            : `Yes! Hasselquist Contracting proudly serves ${city.name} and surrounding areas in ${city.county} County. We're based in Shakopee, just ${city.distanceMiles} miles away, and provide the same high-quality service to all of our service area communities.`,
         },
       },
       {
@@ -122,7 +124,9 @@ export default async function CityPage({ params }: PageProps) {
                 {city.description}
               </p>
               <p className="font-sans text-[1rem] text-stone-600 leading-relaxed mb-8">
-                Hasselquist Contracting is based in Shakopee, just {city.distanceMiles} miles away, and regularly serves homeowners throughout {city.name}. Whether you&apos;re planning a kitchen remodel, finishing your basement, or need reliable handyman work, we bring the same dedication to every project, on time, on budget, and built to last.
+                {city.localNote
+                  ? city.localNote
+                  : `Hasselquist Contracting is based in Shakopee, just ${city.distanceMiles} miles away, and regularly serves homeowners throughout ${city.name}. Whether you're planning a kitchen remodel, finishing your basement, or need reliable handyman work, we bring the same dedication to every project, on time, on budget, and built to last.`}
               </p>
               <Link
                 href="/contact"
@@ -137,7 +141,9 @@ export default async function CityPage({ params }: PageProps) {
                 <h3 className="font-serif font-medium text-h4 text-stone-900">Quick Facts</h3>
                 {[
                   { label: 'County', value: `${city.county} County, MN` },
-                  { label: 'Distance from Base', value: `~${city.distanceMiles} miles from Shakopee` },
+                  ...(city.crewNote
+                    ? [{ label: 'Local Presence', value: city.crewNote }]
+                    : [{ label: 'Distance from Base', value: `~${city.distanceMiles} miles from Shakopee` }]),
                   { label: 'Population', value: city.population },
                   { label: 'License', value: 'MN Lic. BC808643' },
                   { label: 'Free Estimates', value: 'Yes, always' },
@@ -193,6 +199,44 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Rochester-specific section */}
+      {city.slug === 'rochester' && (
+        <section className="section-padding bg-stone-900 text-stone-100">
+          <div className="container-editorial">
+            <FadeIn>
+              <SectionLabel className="mb-5 text-gold">Rochester, MN</SectionLabel>
+              <h2 className="font-serif font-light text-h2 text-stone-100 mb-5">
+                Why Rochester Homeowners Call Hasselquist
+              </h2>
+              <div className="w-12 h-px bg-gold mb-10" />
+            </FadeIn>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: 'Dedicated Rochester Crew',
+                  body: 'We have a crew assigned to Rochester — not a Twin Cities team making occasional trips. No travel surcharges, no scheduling gaps caused by distance. You get the same responsiveness Rochester homeowners expect from any local contractor.',
+                },
+                {
+                  title: 'Licensed & Insured in MN',
+                  body: 'We hold Minnesota Residential Contractor License #BC808643 and are fully insured statewide. The licensing and insurance requirements are the same in Olmsted County as they are in Hennepin. We meet all of them.',
+                },
+                {
+                  title: 'Built for Rochester\'s Market',
+                  body: 'From older homes in Pill Hill and Kutzky Park to newer builds in Cascade Meadows and the southeast corridor — we\'ve worked in all of them. Rochester homes have specific character and specific challenges. We know both.',
+                },
+              ].map((item) => (
+                <FadeIn key={item.title}>
+                  <div className="border-t border-stone-700 pt-6">
+                    <h3 className="font-serif font-medium text-[1.1rem] text-stone-100 mb-3">{item.title}</h3>
+                    <p className="font-sans text-[0.875rem] text-stone-400 leading-relaxed">{item.body}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ */}
       <section className="section-padding bg-cream">
         <div className="container-editorial max-w-3xl">
@@ -207,7 +251,9 @@ export default async function CityPage({ params }: PageProps) {
             {[
               {
                 q: `Does Hasselquist Contracting serve ${city.name}, MN?`,
-                a: `Yes! We proudly serve ${city.name} and surrounding areas in ${city.county} County. Based in Shakopee, just ${city.distanceMiles} miles away, we bring the same high standard to every project, wherever you are in the southwest Twin Cities.`,
+                a: city.localNote
+                    ? `Yes! We proudly serve ${city.name} and the surrounding ${city.county} County area. ${city.localNote}`
+                    : `Yes! We proudly serve ${city.name} and surrounding areas in ${city.county} County. Based in Shakopee, just ${city.distanceMiles} miles away, we bring the same high standard to every project, wherever you are in the southwest Twin Cities.`,
               },
               {
                 q: `What services do you offer in ${city.name}?`,

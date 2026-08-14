@@ -6,6 +6,8 @@ export interface City {
   population: string
   description: string
   neighborhoods?: string[]
+  localNote?: string
+  crewNote?: string
 }
 
 export const cities: City[] = [
@@ -271,8 +273,10 @@ export const cities: City[] = [
     distanceMiles: 80,
     population: '125,000',
     description:
-      'Rochester is Minnesota\'s second-largest city and home to Mayo Clinic, attracting a highly educated, professional population with high expectations for their homes. From historic neighborhoods near downtown to newer executive builds in the southeast, Rochester homeowners invest seriously in quality remodeling and craftsmanship. Hasselquist Contracting has a crew serving the Rochester area, bringing the same licensed, insured, and detail-oriented approach that Twin Cities homeowners have trusted.',
-    neighborhoods: ['Pill Hill', 'Kutzky Park', 'Folwell', 'Northwest Rochester', 'Southeast Rochester'],
+      'Rochester is Minnesota\'s second-largest city and home to Mayo Clinic, attracting a highly educated, professional population with high expectations for their homes. From historic neighborhoods near downtown to newer executive builds in the southeast, Rochester homeowners invest seriously in quality remodeling and craftsmanship.',
+    neighborhoods: ['Pill Hill', 'Kutzky Park', 'Folwell', 'Byron', 'Stewartville', 'Southeast Rochester'],
+    localNote: 'We have a dedicated crew serving Rochester — no travel surcharges, no corner-cutting to make up time. The same licensed, insured, and detail-oriented standard we bring to every Twin Cities project.',
+    crewNote: 'Rochester Crew',
   },
 ]
 
